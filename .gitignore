@@ -10,10 +10,10 @@
 /wp-content/languages
 /wp-content/plugins/index.php
 
-/index.php
+
 /license.txt
 /readme.html
-/wp-*.php
+
 /xmlrpc.php
 
 node_modules
