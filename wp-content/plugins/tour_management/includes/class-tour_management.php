@@ -162,9 +162,16 @@ class Tour_management
 
 		// $this->loader->add_action('admin_menu', $plugin_admin, 'tour_management_cpt');
 		$this->loader->add_action('init', $plugin_admin, 'register_sargia_tours_post_type');
+		$this->loader->add_action('init', $plugin_admin, 'cptui_register_my_taxes_tour_destination');
 		$this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_tour_days_meta_box');
 		$this->loader->add_action('save_post', $plugin_admin, 'save_tour_days_meta_box');
-		$this->loader->add_action('wp_ajax_my_custom_action',  $plugin_admin, 'tour_date_repeter_ajax');
+		$this->loader->add_action('wp_ajax_tour_date_repeter_ajax',  $plugin_admin, 'tour_date_repeter_ajax');
+		$this->loader->add_action('wp_ajax_nopriv_tour_date_repeter_ajax',  $plugin_admin, 'tour_date_repeter_ajax');
+		// $this->loader->add_action('add_meta_boxes',  $plugin_admin, 'add_map_image');
+		$this->loader->add_action('init', $plugin_admin, 'register_tour_attribute_taxonomy');
+		$this->loader->add_action('init', $plugin_admin, 'register_tour_interests_taxonomy');
+		$this->loader->add_action('save_post', $plugin_admin, 'save_tour_highlight_metabox');
+		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_wp_editor_assets');
 	}
 
 	/**
@@ -181,6 +188,8 @@ class Tour_management
 
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+
+		add_shortcode('render-tour-info', array($plugin_public, "load_tour_info"));
 	}
 
 	/**

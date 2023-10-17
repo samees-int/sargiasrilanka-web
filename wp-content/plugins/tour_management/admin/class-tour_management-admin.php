@@ -99,6 +99,16 @@ class Tour_management_Admin
 		 */
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/tour_management-admin.js', array('jquery'), $this->version, false);
+
+		wp_localize_script(
+			$this->plugin_name,
+			"ajax_loader_url",
+			array(
+				'name' => "sargia",
+				'ajaxurl' => admin_url("admin-ajax.php"),
+				'nonce' => wp_create_nonce('ajaxnonce')
+			)
+		);
 	}
 
 	function register_sargia_tours_post_type()
@@ -125,25 +135,149 @@ class Tour_management_Admin
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'sargia-tours'),
 			'menu_icon' => 'dashicons-palmtree', // Change the menu icon as needed
-			// This is where we add taxonomies to our CPT
-			// "taxonomies" => ["category", "post_tag"],
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
 		);
 
 		register_post_type('sargia_tour', $args);
 	}
-	// add_action('init', 'register_sargia_tours_post_type');
+
+
 	function add_tour_days_meta_box()
 	{
+		// Tour Info 
 		add_meta_box(
 			'tour_days_meta_box',
-			'Tour Days',
+			'Tour Itineraries',
 			array($this, 'display_tour_days_meta_box'),
 			'sargia_tour',
 			'normal',
 			'high'
 		);
+		//Map Image metabox
+		add_meta_box(
+			'tour_map_image_metabox',
+			'Tour Map Image',
+			array($this, 'render_tour_map_image_metabox'),
+			'sargia_tour',  // Post type where the metabox should be displayed
+			'side', // Position of the metabox (e.g., normal, side, advanced)
+			'high'    // Priority of the metabox
+		);
+		//Tour Highlights metabox
+		add_meta_box(
+			'tour_highlight_metabox',
+			'Tour Highlight',
+			array($this, 'render_tour_highlight_metabox'),
+			'sargia_tour',  // Post type where the metabox should be displayed
+			'normal', // Position of the metabox (e.g., normal, side, advanced)
+			'default'    // Priority of the metabox
+		);
 	}
+
+	function cptui_register_my_taxes_tour_destination()
+	{
+
+		/**
+		 * Taxonomy: Tour Destination.
+		 */
+
+		$labels = [
+			"name" => esc_html__("Tour Destination", "sargiasrilanka"),
+			"singular_name" => esc_html__("Tour Destination", "sargiasrilanka"),
+			'menu_name' => esc_html__("Tour Destination", "sargiasrilanka"),
+			'all_items' => esc_html__("All Tour Destination Terms", "sargiasrilanka"),
+			'edit_item' => esc_html__("Edit Tour Destination Term", "sargiasrilanka"),
+			'view_item' => esc_html__("View Tour Destination Term", "sargiasrilanka"),
+			'add_new_item' => esc_html__("Add New Tour Destination Term", "sargiasrilanka"),
+			'new_item_name' => esc_html__("New Tour Destination Term Name", "sargiasrilanka"),
+			'search_items' => esc_html__("Search Tour Destination", "sargiasrilanka"),
+			'popular_items' => esc_html__("Popular Tour Destination Terms", "sargiasrilanka"),
+			'not_found' => esc_html__("No tour destination terms found", "sargiasrilanka"),
+		];
+
+
+		$args = [
+			"label" => esc_html__("Tour Destination", "sargiasrilanka"),
+			"labels" => $labels,
+			"public" => true,
+			"publicly_queryable" => true,
+			"hierarchical" => true,
+			"show_ui" => true,
+			"show_in_menu" => true,
+			"show_in_nav_menus" => true,
+			"query_var" => true,
+			"rewrite" => ['slug' => 'tours-by-destination', 'with_front' => true,],
+			"show_admin_column" => true,
+			"show_in_rest" => true,
+			"show_tagcloud" => false,
+			"rest_base" => "tours-by-destination",
+			"rest_controller_class" => "WP_REST_Terms_Controller",
+			"rest_namespace" => "wp/v2",
+			"show_in_quick_edit" => false,
+			"sort" => false,
+			"show_in_graphql" => false,
+		];
+		register_taxonomy("tours-by-destination", ["sargia_tour"], $args);
+	}
+
+	function register_tour_attribute_taxonomy()
+	{
+		/**
+		 * Taxonomy: Tour Duration
+		 */
+		$labels = array(
+			'name' => 'Tour Duration',
+			'singular_name' => 'Tour Duration',
+			'menu_name' => 'Tour Durations',
+			'search_items' => 'Search Tour Durations',
+			'all_items' => 'All Tour Durations',
+			'edit_item' => 'Edit Tour Duration',
+			'update_item' => 'Update Tour Duration',
+			'add_new_item' => 'Add New Tour Duration',
+			'new_item_name' => 'New Tour Duration Name',
+			'not_found' => 'No Tour Durations found',
+		);
+
+		$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+			'public' => true,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud' => true,
+		);
+		register_taxonomy('tours-by-duration', 'sargia_tour', $args);
+	}
+	function register_tour_interests_taxonomy()
+	{
+		/**
+		 * Taxonomy: Tour Interests
+		 */
+		$labels = array(
+			'name' => 'Tour Interest',
+			'singular_name' => 'Tour Interest',
+			'menu_name' => 'Tour Interests',
+			'search_items' => 'Search Tour Interests',
+			'all_items' => 'All Tour Interests',
+			'edit_item' => 'Edit Tour Interest',
+			'update_item' => 'Update Tour Interest',
+			'add_new_item' => 'Add New Tour Interest',
+			'new_item_name' => 'New Tour Interest Name',
+			'not_found' => 'No Tour Interests found',
+		);
+
+		$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+			'public' => true,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud' => true,
+		);
+		register_taxonomy('tours-by-interest', 'sargia_tour', $args);
+	}
+
 	function display_tour_days_meta_box($post)
 	{
 		// Retrieve existing tour days data
@@ -151,124 +285,16 @@ class Tour_management_Admin
 		// Convert the stored JSON string to an array
 		$tour_days = is_array($tour_days) ? $tour_days : array();
 
+		// Display input fields for title, description, and images
+
 		ob_start(); // start buffer
 
 		// inculde template file
 		include_once(TOUR_MANAGEMENT_PLUGIN_PATH . 'admin/partials/tmpl-tour-custom-filed.php');
 
 		$template =  ob_get_contents(); // reading content
-
 		ob_end_clean();
 		echo $template;
-
-
-
-
-
-		// Display input fields for title, description, and images
-?>
-
-		<!-- <div class="tour-field">
-			<div class="tour-label"><label for="tour_days_title">Title:</label></div>
-			<div class="tour-input"><input type="text" id="tour_days_title" name="tour_days[title]" value="<?php echo isset($tour_days['title']) ? esc_attr($tour_days['title']) : ''; ?>"></div>
-		</div>
-		<div class="tour-field">
-			<div class="tour-label"><label for="tour_days_description">Description:</label></div>
-			<div class="tour-input"><textarea id="tour_days_description" name="tour_days[description]"><?php echo isset($tour_days['description']) ? esc_html($tour_days['description']) : ''; ?></textarea></div>
-		</div>
-
-		<div class="tour-field">
-			<div class="tour-label"><label for="tour_days_images">Images:</label></div>
-			<div class="tour-input"><input type="text" id="tour_days_images" name="tour_days[images]" value="<?php echo isset($tour_days['images']) ? esc_attr($tour_days['images']) : ''; ?>"></div>
-			<small>Enter image URLs separated by commas.</small>
-		</div> -->
-
-
-
-
-
-		<script>
-			// JavaScript to handle adding and removing repeater items
-			// document.addEventListener('click', function(event) {
-			// 	if (event.target.id === 'add-repeater-item') {
-			// 		event.preventDefault(); // Prevent form submission
-
-			// 		const wrapper = document.getElementById('repeater-fields');
-			// 		const newIndex = wrapper.children.length;
-			// 		const item = document.createElement('div');
-			// 		item.className = 'repeater-item';
-			// 		// Create a JavaScript object with the data to send
-			// 		const data = {
-			// 			action: 'my_custom_action',
-			// 			newIndex: newIndex
-			// 		};
-
-			// 		// Send an AJAX request to the server
-			// 		jQuery.post(ajaxurl, data, function(response) {
-
-			// 			console.log('Response from server:', response);
-			// 			item.innerHTML = response;
-			// 			// const responseElement = document.getElementById('sub_field_2_' + newIndex);
-			// 			// if (responseElement) {
-			// 			// 	responseElement.innerHTML = response;
-			// 			// }
-
-			// 			// Reinitialize the editor: Remove the editor then add it back
-			// 			tinymce.execCommand('mceRemoveEditor', false, 'tdmessagereply');
-			// 			tinymce.execCommand('mceAddEditor', false, 'tdmessagereply');
-			// 		});
-
-
-
-
-			// 		wrapper.appendChild(item);
-			// 	}
-			// 	if (event.target.classList.contains('remove-repeater-item')) {
-			// 		event.preventDefault(); // Prevent form submission
-
-			// 		event.target.closest('.repeater-item').remove();
-			// 	}
-			// });
-
-			// // Function to handle image upload
-			// function handleImageUpload(index) {
-			// 	let customUploader = wp.media({
-			// 		title: 'Choose Image',
-			// 		button: {
-			// 			text: 'Choose Image'
-			// 		},
-			// 		multiple: false
-			// 	});
-
-			// 	customUploader.on('select', function() {
-			// 		// console.log('click' + index);
-			// 		let attachment = customUploader.state().get('selection').first().toJSON();
-			// 		// console.log(attachment.url);
-			// 		document.getElementById('sub_field_image_' + index).value = attachment.url;
-			// 		const wrapper = document.getElementById('img-preview_' + index);
-			// 		// console.log(attachment.url);
-			// 		const item = document.createElement('div');
-
-			// 		item.innerHTML = `<img src=${attachment.url} width="100px">`;
-			// 		wrapper.appendChild(item);
-			// 	});
-
-			// 	customUploader.open();
-			// }
-
-			// // Event listener for image upload buttons
-			// document.addEventListener('click', function(event) {
-
-			// 	if (event.target.classList.contains('upload-image-button')) {
-			// 		event.preventDefault(); // Prevent form submission
-
-			// 		let index = event.target.id.split('_')[3];
-			// 		handleImageUpload(index);
-			// 		// /console.log(index)
-			// 	}
-			// });
-		</script>
-	<?php
 	}
 
 	function save_tour_days_meta_box($post_id)
@@ -276,22 +302,25 @@ class Tour_management_Admin
 		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 
 		if (!current_user_can('edit_post', $post_id)) return;
-
+		// var_dump($_POST['tour_days']);
+		// die;
 		// Save tour days data
 		if (isset($_POST['tour_days'])) {
 			$tour_days_data = array(
-				'title' => sanitize_text_field($_POST['tour_days']['title']),
-				'description' => wp_kses_post($_POST['tour_days']['description']),
-				'images' => sanitize_text_field($_POST['tour_days']['images']),
+				'total_days' => sanitize_text_field($_POST['tour_days']['total_days']),
+				'total_disatance' => sanitize_text_field($_POST['tour_days']['total_disatance']),
+				'total_stops' => sanitize_text_field($_POST['tour_days']['total_stops']),
+				'map_image_id' => sanitize_text_field($_POST['tour_days']['map_image_id']),
 				'repeater' => array(),
 			);
 
 			if (isset($_POST['tour_days']['repeater']) && is_array($_POST['tour_days']['repeater'])) {
 				foreach ($_POST['tour_days']['repeater'] as $repeater_item) {
 					$repeater_item_data = array(
-						'sub_field_1' => isset($repeater_item['sub_field_1']) ? sanitize_text_field($repeater_item['sub_field_1']) : '',
-						'sub_field_2' => isset($repeater_item['sub_field_2']) ? sanitize_text_field($repeater_item['sub_field_2']) : '',
-						'sub_field_image' => isset($repeater_item['sub_field_image']) ? esc_url($repeater_item['sub_field_image']) : '',
+						'tour_itineraies_item_title' => isset($repeater_item['tour_itineraies_item_title']) ? sanitize_text_field($repeater_item['tour_itineraies_item_title']) : '',
+						'tour_itineraries_date_content' => isset($repeater_item['tour_itineraries_date_content']) ? wp_kses_post($repeater_item['tour_itineraries_date_content']) : '',
+						'tour_itineraries_date_heightlight' => isset($repeater_item['tour_itineraries_date_heightlight']) ? wp_kses_post($repeater_item['tour_itineraries_date_heightlight']) : '',
+						'tour_itineraries_date_image' => isset($repeater_item['tour_itineraries_date_image']) ? sanitize_text_field($repeater_item['tour_itineraries_date_image']) : '',
 					);
 
 					$tour_days_data['repeater'][] = $repeater_item_data;
@@ -302,35 +331,104 @@ class Tour_management_Admin
 	}
 
 
+	function render_tour_map_image_metabox($post)
+	{
+		$tour_meta = get_post_meta($post->ID, 'tour_days', true);
 
+		$image_url = !empty($tour_meta["map_image_id"]) ? (wp_get_attachment_image_url($tour_meta["map_image_id"], 'medium')) : '';
+
+		echo '<div class="custom-image-container">';
+		echo '';
+		$display = '';
+		if (!empty($image_url)) {
+			$display = 'block';
+		} else {
+			$display = 'none';
+		}
+
+		echo '<img src="' . esc_url($image_url) . '" alt="Map Image" style=" max-width:100%;  display : ' . $display    . '  "  id="map_img_preview" /><br>';
+		echo '<div><a href="#" class="remove-map-image" style=" display : ' . $display    . '">Remove Image</a></div>';
+
+		echo '<div id="map_image_btn" style ="display:' . (empty($image_url) ? "block" : "none") . '"><label for="custom_image_field">Upload or Select Map Image:</label> <br/>';
+		echo '<input type="button" value="Select Image" class="button button-primary custom_image_upload_btn"></div>';
+		$img_id = "";
+		if (!empty($tour_meta["map_image_id"])) {
+			$img_id = esc_attr($tour_meta["map_image_id"]);
+		}
+		echo '<input type="hidden" id="map_image_id" name="tour_days[map_image_id]" value="' . $img_id . '">';
+
+		echo '</div>';
+	}
+
+	function render_tour_highlight_metabox($post)
+	{
+		$content = get_post_meta($post->ID, '_tour_highlight_content', true);
+		wp_editor($content, 'tour_highlight_editor', array(
+			'textarea_name' => '_tour_highlight_content',
+			'editor_height' => 200,
+			'textarea_rows' => 20
+		));
+	}
+
+
+
+	function save_tour_highlight_metabox($post_id)
+	{
+		if (array_key_exists('_tour_highlight_content', $_POST)) {
+			update_post_meta($post_id, '_tour_highlight_content', $_POST['_tour_highlight_content']);
+		}
+	}
 
 	function tour_date_repeter_ajax()
 	{
 		// Get the newIndex value from the AJAX request
 		$newIndex = isset($_POST['newIndex']) ? $_POST['newIndex'] : '';
-		$editor_id = 'sub_field_2_' . $newIndex;
+		$editor_id = 'tour_itineraries_date_content_' . $newIndex;
 		ob_start(); ?>
 
 		<h4 class="tour-date-title">Day <?php echo $newIndex + 1; ?></h4>
 		<div class="repeater-item-wrapper">
 			<div class="repeater-item-content">
 				<div class="tour-field">
-					<div class="tour-label"><label for="sub_field_1_<?php echo $newIndex; ?>">Title</label></div>
-					<div class="tour-input"><input type="text" id="sub_field_1_<?php echo $newIndex; ?>" name="tour_days[repeater][<?php echo $newIndex; ?>][sub_field_1]" value=""></div>
+					<div class="tour-label"><label for="tour_itineraries_date_title_<?php echo $newIndex; ?>">Title</label></div>
+					<div class="tour-input"><input type="text" id="tour_itineraries_date_title_<?php echo $newIndex; ?>" name="tour_days[repeater][<?php echo $newIndex; ?>][tour_itineraies_item_title]" value=""></div>
 				</div>
 
-				<label for="sub_field_2_<?php echo $newIndex; ?>">Content</label>
+				<label for="tour_itineraries_date_content_<?php echo $newIndex; ?>">Content</label>
 				<?php
 				$content = '';
-				$editor_id = 'sub_field_2_' . $newIndex;
-				wp_editor($content, $editor_id, array(
-					'textarea_name' => "tour_days[repeater][$newIndex][sub_field_2]",
-				));
+				$settings = array(
+					'textarea_name' => "tour_days[repeater][$newIndex][tour_itineraries_date_content]",
+					'editor_id' => $editor_id,
+					'wpautop' => true, // Enable/disable wpautop (automatic paragraph formatting)
+					'media_buttons' => true, // Show/hide the media buttons
+					'teeny' => false, // Show minimal editor toolbars
+					'tinymce' => true, // Load TinyMCE, can be used to load other WYSIWYG editor
+				);
+				$editor_id = 'tour_itineraries_date_content_' . $newIndex;
+				wp_editor($content, $editor_id, $settings);
 
 				?>
-				<label for="sub_field_image_<?php echo $newIndex; ?>">Image:</label>
+
+				<label for="tour_itineraries_date_heightlight_<?php echo $newIndex; ?>">Tour Higlight</label>
+				<?php
+				$content = '';
+				$settings = array(
+					'textarea_name' => "tour_days[repeater][$newIndex][tour_itineraries_date_heightlight]",
+					'editor_id' => $editor_id,
+					'wpautop' => true, // Enable/disable wpautop (automatic paragraph formatting)
+					'media_buttons' => true, // Show/hide the media buttons
+					'teeny' => false, // Show minimal editor toolbars
+					'tinymce' => true, // Load TinyMCE, can be used to load other WYSIWYG editor
+					'editor_height' => 200,
+				);
+				$editor_id = 'tour_itineraries_date_heightlight_' . $newIndex;
+				wp_editor($content, $editor_id, $settings);
+
+				?>
+				<label for="tour_itineraries_date_image_<?php echo $newIndex; ?>">Image:</label>
 				<div id="img-preview_<?php echo $newIndex; ?>"></div>
-				<input type="text" id="sub_field_image_<?php echo $newIndex; ?>" class="sub-field-image" name="tour_days[repeater][<?php echo $newIndex; ?>][sub_field_image]" value="">
+				<input type="text" id="tour_itineraries_date_image_<?php echo $newIndex; ?>" class="sub-field-image" name="tour_days[repeater][<?php echo $newIndex; ?>][tour_itineraries_date_image]" value="">
 				<button class="upload-image-button" id="upload_image_button_<?php echo $newIndex; ?>">Upload Image</button>
 			</div>
 			<button class="remove-repeater-item">Remove</button>
@@ -346,5 +444,11 @@ class Tour_management_Admin
 		echo $editor_html;
 
 		wp_die();
+	}
+
+	// Enqueue necessary scripts and styles for wp_editor
+	function enqueue_wp_editor_assets()
+	{
+		wp_enqueue_editor();
 	}
 }

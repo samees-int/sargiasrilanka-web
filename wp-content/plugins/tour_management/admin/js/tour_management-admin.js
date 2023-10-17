@@ -39,7 +39,7 @@
       item.className = "repeater-item";
       // Create a JavaScript object with the data to send
       const data = {
-        action: "my_custom_action",
+        action: "tour_date_repeter_ajax",
         newIndex: newIndex,
       };
 
@@ -47,7 +47,7 @@
       jQuery.post(ajaxurl, data, function (response) {
         console.log("Response from server:", response);
         item.innerHTML = response;
-        // const responseElement = document.getElementById('sub_field_2_' + newIndex);
+        // const responseElement = document.getElementById('tour_itineraries_date_content_' + newIndex);
         // if (responseElement) {
         // 	responseElement.innerHTML = response;
         // }
@@ -69,26 +69,45 @@
   // Function to handle image upload
   function handleImageUpload(index) {
     let customUploader = wp.media({
-      title: "Choose Image",
+      title: "Choose Images",
       button: {
-        text: "Choose Image",
+        text: "Choose Images",
       },
-      multiple: false,
+      multiple: true, // Allow multiple image selection
     });
 
     customUploader.on("select", function () {
-      // console.log('click' + index);
-      let attachment = customUploader.state().get("selection").first().toJSON();
-      // console.log(attachment.url);
-      document.getElementById("sub_field_image_" + index).value =
-        attachment.url;
-      const wrapper = document.getElementById("img-preview_" + index);
-      // console.log(attachment.url);
-      const item = document.createElement("div");
+      let attachments = customUploader.state().get("selection").toJSON();
 
-      item.innerHTML = `<img src=${attachment.url} width="100px">`;
-      wrapper.appendChild(item);
+      // Clear any existing previews
+      const wrapper = document.getElementById("img-preview_" + index);
+      wrapper.innerHTML = "";
+
+      // Loop through each selected attachment and display its preview
+      attachments.forEach(function (attachment) {
+        console.log("Attachment URL: ", attachment.id);
+        document.getElementById("tour_itineraries_date_image_" + index).value +=
+          attachment.id + ","; // Store URLs (you can modify how you want to store these URLs)
+
+        const item = document.createElement("span");
+        item.innerHTML = `<img src="${attachment.url}" width="100px">`;
+        wrapper.appendChild(item);
+      });
     });
+
+    // customUploader.on("select", function () {
+    //   // console.log('click' + index);
+    //   let attachment = customUploader.state().get("selection").first().toJSON();
+    //   console.log(attachment);
+    //   document.getElementById("tour_itineraries_date_image_" + index).value =
+    //     attachment.url;
+    //   const wrapper = document.getElementById("img-preview_" + index);
+    //   // console.log(attachment.url);
+    //   const item = document.createElement("div");
+
+    //   item.innerHTML = `<img src=${attachment.url} width="100px">`;
+    //   wrapper.appendChild(item);
+    // });
 
     customUploader.open();
   }
@@ -100,7 +119,46 @@
 
       let index = event.target.id.split("_")[3];
       handleImageUpload(index);
-      // /console.log(index)
     }
+  });
+
+  jQuery(document).ready(function ($) {
+    // Function to handle the "Remove Image" link
+    $(".custom-image-container").on("click", ".remove-map-image", function (e) {
+      e.preventDefault();
+      $("#map_image_id").val(""); // Clear the image ID
+      $(".custom-image-container img").attr("src", ""); // Clear the displayed image
+      $(".custom-image-container img").hide();
+      $("#map_image_btn").show();
+      $(this).hide();
+    });
+    $(".custom_image_upload_btn").on("click", function (e) {
+      e.preventDefault();
+      let imageFrame = wp.media({
+        title: "Select or Upload Image",
+        button: {
+          text: "Use this image",
+        },
+        multiple: false,
+      });
+
+      imageFrame.on("select", function () {
+        let attachment = imageFrame.state().get("selection").first().toJSON();
+        $("#map_image_id").val(attachment.id);
+
+        var img_preview_tag = document.getElementById("map_img_preview");
+        img_preview_tag.style.display = "block";
+        $(".remove-map-image").show();
+        $("#map_image_btn").hide();
+
+        // Display the selected image
+        let imageUrl = attachment.url;
+        $(".custom-image-container img").attr("src", imageUrl);
+      });
+
+      imageFrame.open();
+    });
+    // tour type make as radio button
+    $("#tour_destinationchecklist .selectit input").attr("type", "radio");
   });
 })(jQuery);
