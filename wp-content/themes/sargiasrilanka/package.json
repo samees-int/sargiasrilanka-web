@@ -1,5 +1,5 @@
 {
-  "name": "understrap",
+  "name": "sargiasrilanka",
   "version": "1.2.2",
   "description": "WordPress Theme framework",
   "main": "index.js",
@@ -74,5 +74,9 @@
     "rollup": "^3.2.5",
     "sass": "^1.56.0",
     "terser": "^5.15.1"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "fs-extra": "^11.1.1"
   }
 }

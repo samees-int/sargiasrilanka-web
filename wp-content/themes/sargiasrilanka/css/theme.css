@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap");
 /*!
  * Bootstrap  v5.2.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -52,7 +53,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: Lato, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -6347,7 +6348,7 @@ textarea.form-control-lg {
   display: block;
   padding: var(--bs-tooltip-arrow-height);
   margin: var(--bs-tooltip-margin);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6457,7 +6458,7 @@ textarea.form-control-lg {
   z-index: var(--bs-popover-zindex);
   display: block;
   max-width: var(--bs-popover-max-width);
-  font-family: var(--bs-font-sans-serif);
+  font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -15353,6 +15354,314 @@ figure.woocommerce-product-gallery__wrapper {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px #7ed957;
+}
+
+.navbar .navbar-brand {
+  width: 150px;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover, .navbar .navbar-nav .nav-item .nav-link.active {
+  color: #7ed957;
+}
+.navbar .navbar-nav .nav-item.active .nav-link {
+  color: #7ed957;
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link {
+  padding-right: 0;
+}
+
+.tour-type-header {
+  padding-top: 40px;
+  margin-bottom: 50px;
+}
+@media (min-width: 992px) {
+  .tour-type-header {
+    margin-bottom: 100px;
+  }
+}
+.tour-type-header .breadcrumb {
+  margin-bottom: 40px;
+}
+.tour-type-header .itineraries--page-title {
+  font-size: 35px;
+  font-weight: bold;
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+@media (min-width: 992px) {
+  .tour-type-header .itineraries--page-title {
+    font-size: 85px;
+    line-height: 0.95;
+  }
+}
+.tour-type-header .itineraries__filter__container {
+  width: 100%;
+  margin-bottom: 100px;
+}
+.tour-type-header .itineraries__filter__container .itineraries__filter__intro {
+  font-size: 40px;
+  margin-bottom: 0;
+  padding-right: 35px;
+  text-align: left;
+  line-height: 1.5;
+  font-weight: 300;
+  border-top: 1px solid #f8f8f8;
+}
+@media (min-width: 768px) {
+  .tour-type-header .itineraries__filter__container .itineraries__filter__intro {
+    border-right: 1px solid #f8f8f8;
+    border-top: 0;
+    max-width: 388px;
+  }
+}
+.tour-type-header .itineraries-filters {
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+@media (min-width: 768px) {
+  .tour-type-header .itineraries-filters {
+    display: flex;
+    margin-left: 70px;
+  }
+}
+.tour-type-header .filters__option-set:not(:last-child) {
+  margin-bottom: 40px;
+}
+.tour-type-header .filters__option-set.filters__option-set--small {
+  width: 50%;
+}
+.tour-type-header .filters__option-set .filters__option {
+  position: relative;
+  padding: 0;
+  display: inline;
+}
+.tour-type-header .filters__option-set .filters__option + .filters__option {
+  margin-left: 5px;
+}
+.tour-type-header .filters__option-set .filters__option .form-check-label {
+  cursor: pointer;
+  background-color: #767676;
+  padding: 7px 20px;
+  margin-top: 7px;
+  display: inline-block;
+  border-radius: 20px;
+  transition: background-color 150ms;
+  font-size: 12px;
+}
+.tour-type-header .filters__option-set .filters__option .form-check-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+.tour-type-header .filters__option-set .filters__option .form-check-input:checked + .form-check-label {
+  background-color: #fff;
+  color: #171717;
+}
+
+.feature-comparison__list {
+  margin-top: 30px;
+}
+.feature-comparison__list .feature-comparison__link {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  margin-bottom: 20px;
+  transition: box-shadow 150ms;
+  flex-direction: column;
+  box-shadow: 0 0 5px 0 rgba(174, 174, 174, 0.5019607843);
+}
+.feature-comparison__list .feature-comparison__link:hover {
+  box-shadow: 0 0 7px 2px #979797;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link .feature-comparison__img {
+    order: 2;
+    width: 47%;
+  }
+}
+.feature-comparison__list .feature-comparison__link .feature-comparison__img .feature-comparison__img_bg {
+  background-position: center;
+  height: 100%;
+  background-position: center;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link .feature-comparison__img .feature-comparison__img_bg {
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link .featured-comparison__content {
+    order: 1;
+    width: 53%;
+  }
+}
+.feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details {
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 30px 20px;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details {
+    padding: 45px 50px 50px 70px;
+  }
+}
+.feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details .featured-comparison__title {
+  flex: 1 1;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details .featured-comparison__title {
+    min-width: 100%;
+  }
+}
+.feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details .featured-comparison__title h3, .feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__details .featured-comparison__title .h3 {
+  color: #000;
+  line-height: 2.6rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.feature-comparison__list .feature-comparison__link .featured-comparison__content .featured-comparison__tags {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 400;
+}
+.feature-comparison__list .featured-comparison__item {
+  display: flex;
+  transition: box-shadow 150ms;
+}
+.feature-comparison__list .featured-comparison__map {
+  width: 85px;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .featured-comparison__map {
+    order: 1;
+  }
+}
+.feature-comparison__list .featured-comparison__description-container {
+  order: 1;
+  margin-top: 20px;
+}
+.feature-comparison__list .featured-comparison__meta {
+  align-self: center;
+  flex-basis: 100%;
+}
+@media (min-width: 768px) {
+  .feature-comparison__list .featured-comparison__meta {
+    flex: 0 1 70%;
+  }
+}
+.feature-comparison__list .featured-comparison__meta .featured-comparison__meta__length {
+  margin-bottom: 0;
+  font-size: 25px;
+  color: #767676;
+}
+.feature-comparison__list .featured-comparison__meta .featured-comparison__meta__location {
+  color: #767676;
+  margin-bottom: 0;
+  margin-top: 5px;
+  line-height: 1;
+}
+.feature-comparison__list .feature-comparison__description {
+  font-size: 18px;
+}
+
+.divider--grey {
+  color: #ced4da;
+}
+
+.tour_img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .tour_img-wrapper {
+    padding-top: 40%;
+  }
+}
+.tour_img-wrapper .tour_single_title {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50px;
+}
+@media (min-width: 768px) {
+  .tour_img-wrapper .tour_single_title {
+    top: 100px;
+  }
+}
+.tour_img-wrapper .tour_single_title .tour_entry-title {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 800;
+}
+@media (min-width: 768px) {
+  .tour_img-wrapper .tour_single_title .tour_entry-title {
+    font-size: 70px;
+  }
+}
+
+.tour_main-content {
+  background-color: #000;
+  padding: 50px 0;
+  color: #fff;
+}
+
+.tour_meta_total_days,
+.tour_meta_total_disatance {
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.tour-itineraries .tour-itineraries__item {
+  margin-top: 50px;
+}
+.tour-itineraries .tour-itineraries__item:first-child {
+  margin-top: 100px;
+}
+.tour-itineraries .tour-itineraries__item .tour-itineraries__title {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.tour-itineraries .tour-itineraries__item .tour-itineraries-item__imgas {
+  margin-bottom: 40px;
+}
+.tour-itineraries .tour-itineraries__item .tour-itineraries-item__highlights {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .tour-itineraries .tour-itineraries__item .tour-itineraries__content {
+    max-width: 80%;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

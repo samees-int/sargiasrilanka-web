@@ -1,0 +1,27 @@
+.navbar {
+  .navbar-brand {
+    width: 150px;
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: $white;
+
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+      &.active {
+        .nav-link {
+          color: $primary;
+        }
+      }
+      &:last-child {
+        .nav-link {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
