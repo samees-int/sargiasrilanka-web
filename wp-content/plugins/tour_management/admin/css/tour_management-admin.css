@@ -1,0 +1,59 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.tour-field {
+  position: relative;
+  margin: 0;
+
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #cbdaf9;
+}
+.tour-field:first-child {
+  border-top: none;
+  margin-top: 0;
+}
+.tour-field .tour-label {
+  margin: 0 0 10px;
+}
+.tour-field input[type="text"],
+.tour-field textarea {
+  width: 100%;
+}
+.repeater-item {
+  padding: 10px;
+  background-color: #eaecf0;
+  margin-bottom: 5px;
+}
+.tour-date-title {
+  margin-bottom: 10px;
+}
+.repeater-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.repeater-item-content {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+}
+.btn-add-repeater-item,
+.remove-repeater-item {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn-add-repeater-item {
+  background-color: #7ed957; /* Green */
+}
+.remove-repeater-item {
+  background-color: #d5230c; /* Green */
+  margin: 10px;
+  padding: 10px 20px;
+}
