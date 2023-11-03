@@ -1,0 +1,77 @@
+.navbar {
+  .navbar-brand {
+    width: 150px;
+  }
+  .navbar-nav {
+    .nav-item {
+      position: relative;
+      margin: 1rem;
+      &.primary-underline {
+        &::after {
+          background: $primary;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1.5px;
+        background: $white;
+        width: 0;
+        bottom: 0;
+        transition: all 0.5s;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+      .active {
+      }
+      .nav-link {
+        padding: 0;
+        color: $white;
+        font-weight: 400;
+        position: relative;
+        &.bg-white {
+          color: $primary;
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+        &:hover,
+        &.active {
+        }
+      }
+      &.active {
+        &::after {
+          width: 100%;
+        }
+        .nav-link {
+          color: $white;
+          &.bg-white {
+            color: $primary;
+          }
+        }
+      }
+      &:last-child {
+        .nav-link {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+#main-nav {
+  transition-property: transform, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.5s;
+
+  &.-translate-y-full {
+    --tw-translate-y: -100%;
+    transform: translate(0, -100%);
+    background-color: transparent;
+  }
+}

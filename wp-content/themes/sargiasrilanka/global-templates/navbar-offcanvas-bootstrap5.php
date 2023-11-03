@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Header Navbar (bootstrap5)
  *
@@ -7,44 +8,37 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$container = get_theme_mod( 'sargiasrilanka_container_type' );
+$container = get_theme_mod('sargiasrilanka_container_type');
+$class = "";
+if (is_front_page()) {
+	$class = "fixed-top navbar-dark";
+} else {
+	$class = " navbar-light bg-black";
+}
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md  <?php echo $class; ?>" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
-		<?php esc_html_e( 'Main Navigation', 'sargiasrilanka' ); ?>
+		<?php esc_html_e('Main Navigation', 'sargiasrilanka'); ?>
 	</h2>
 
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr($container); ?>">
 
 		<!-- Your site branding in the menu -->
-		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
+		<?php get_template_part('global-templates/navbar-branding'); ?>
 
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="offcanvas"
-			data-bs-target="#navbarNavOffcanvas"
-			aria-controls="navbarNavOffcanvas"
-			aria-expanded="false"
-			aria-label="<?php esc_attr_e( 'Open menu', 'sargiasrilanka' ); ?>"
-		>
+		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e('Open menu', 'sargiasrilanka'); ?>">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarNavOffcanvas">
 
 			<div class="offcanvas-header justify-content-end">
-				<button
-					class="btn-close btn-close-white text-reset"
-					type="button"
-					data-bs-dismiss="offcanvas"
-					aria-label="<?php esc_attr_e( 'Close menu', 'sargiasrilanka' ); ?>"
-				></button>
+				<button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="<?php esc_attr_e('Close menu', 'sargiasrilanka'); ?>"></button>
 			</div><!-- .offcancas-header -->
 
 			<!-- The WordPress Menu goes here -->
@@ -54,7 +48,7 @@ $container = get_theme_mod( 'sargiasrilanka_container_type' );
 					'theme_location'  => 'primary',
 					'container_class' => 'offcanvas-body',
 					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
+					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1',
 					'fallback_cb'     => '',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,

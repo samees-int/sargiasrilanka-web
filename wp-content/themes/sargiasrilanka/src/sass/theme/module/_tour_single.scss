@@ -1,0 +1,65 @@
+.tour_img-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include media-breakpoint-up(md) {
+    padding-top: 40%;
+  }
+  .tour_single_title {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50px;
+    @include media-breakpoint-up(md) {
+      top: 100px;
+    }
+    .tour_entry-title {
+      color: $white;
+      font-size: 40px;
+      font-weight: 800;
+      @include media-breakpoint-up(md) {
+        font-size: 70px;
+      }
+    }
+  }
+}
+.tour_main-content {
+  background-color: $black;
+  padding: 50px 0;
+  color: $white;
+}
+.tour_meta_total_days,
+.tour_meta_total_disatance {
+  margin-bottom: 0;
+  font-size: 30px;
+}
+.tour-itineraries {
+  .tour-itineraries__item {
+    margin-top: 50px;
+
+    &:first-child {
+      margin-top: 100px;
+    }
+    .tour-itineraries__title {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .tour-itineraries-item__imgas {
+      margin-bottom: 40px;
+    }
+    .tour-itineraries-item__highlights {
+      margin-bottom: 40px;
+    }
+    .tour-itineraries__content {
+      @include media-breakpoint-up(md) {
+        max-width: 80%;
+      }
+    }
+  }
+}

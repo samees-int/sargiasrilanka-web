@@ -1,0 +1,22 @@
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px $primary;
+}
+.section__title {
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    font-size: 50px;
+
+    font-family: $font-family-secondary;
+    color: $primary;
+    @include media-breakpoint-up(md) {
+      font-size: 62px;
+    }
+  }
+  .section_subtitle {
+    color: $primary--40;
+    font-size: 18px;
+  }
+}

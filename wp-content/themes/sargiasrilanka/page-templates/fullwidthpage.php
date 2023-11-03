@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Full Width Page
  *
@@ -8,24 +9,25 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-$container = get_theme_mod( 'sargiasrilanka_container_type' );
+$container = get_theme_mod('sargiasrilanka_container_type');
 
-if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
+if (is_front_page()) {
+	get_template_part('global-templates/hero');
 }
 
 $wrapper_id = 'full-width-page-wrapper';
-if ( is_page_template( 'page-templates/no-title.php' ) ) {
+if (is_page_template('page-templates/no-title.php')) {
 	$wrapper_id = 'no-title-page-wrapper';
 }
 ?>
 
-<div class="wrapper" id="<?php echo $wrapper_id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- ok. ?>">
+<div class="wrapper pt-0" id="<?php echo $wrapper_id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- ok. 
+								?>">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="<?php echo esc_attr($container); ?>" id="content">
 
 		<div class="row">
 
@@ -34,12 +36,12 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
 				<main class="site-main" id="main" role="main">
 
 					<?php
-					while ( have_posts() ) {
+					while (have_posts()) {
 						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
+						get_template_part('loop-templates/content', 'page');
 
 						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
+						if (comments_open() || get_comments_number()) {
 							comments_template();
 						}
 					}
@@ -53,7 +55,8 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
 
 	</div><!-- #content -->
 
-</div><!-- #<?php echo $wrapper_id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- ok. ?> -->
+</div><!-- #<?php echo $wrapper_id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- ok. 
+			?> -->
 
 <?php
 get_footer();

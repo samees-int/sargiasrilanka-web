@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 *,
 *::before,
 *::after {
@@ -414,7 +416,7 @@ progress {
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
-  --bs-green: #7ed957;
+  --bs-green: #204730;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -430,17 +432,17 @@ progress {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #7ed957;
+  --bs-primary: #204730;
   --bs-secondary: #6c757d;
-  --bs-success: #7ed957;
+  --bs-success: #204730;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 126, 217, 87;
+  --bs-primary-rgb: 32, 71, 48;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 126, 217, 87;
+  --bs-success-rgb: 32, 71, 48;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
@@ -453,7 +455,7 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: Kanit, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -469,8 +471,8 @@ progress {
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #7ed957;
-  --bs-link-hover-color: #65ae46;
+  --bs-link-color: #204730;
+  --bs-link-hover-color: #1a3926;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -553,13 +555,13 @@ progress {
 
 .table-primary {
   --bs-table-color: #000;
-  --bs-table-bg: #e5f7dd;
-  --bs-table-border-color: #cedec7;
-  --bs-table-striped-bg: #daebd2;
+  --bs-table-bg: #d2dad6;
+  --bs-table-border-color: #bdc4c1;
+  --bs-table-striped-bg: #c8cfcb;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cedec7;
+  --bs-table-active-bg: #bdc4c1;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d4e4cc;
+  --bs-table-hover-bg: #c2cac6;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -581,13 +583,13 @@ progress {
 
 .table-success {
   --bs-table-color: #000;
-  --bs-table-bg: #e5f7dd;
-  --bs-table-border-color: #cedec7;
-  --bs-table-striped-bg: #daebd2;
+  --bs-table-bg: #d2dad6;
+  --bs-table-border-color: #bdc4c1;
+  --bs-table-striped-bg: #c8cfcb;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cedec7;
+  --bs-table-active-bg: #bdc4c1;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d4e4cc;
+  --bs-table-hover-bg: #c2cac6;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -853,8 +855,8 @@ progress {
 }
 
 .text-bg-primary {
-  color: #000 !important;
-  background-color: RGBA(126, 217, 87, var(--bs-bg-opacity, 1)) !important;
+  color: #fff !important;
+  background-color: RGBA(32, 71, 48, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-secondary {
@@ -863,8 +865,8 @@ progress {
 }
 
 .text-bg-success {
-  color: #000 !important;
-  background-color: RGBA(126, 217, 87, var(--bs-bg-opacity, 1)) !important;
+  color: #fff !important;
+  background-color: RGBA(32, 71, 48, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-info {
@@ -893,10 +895,10 @@ progress {
 }
 
 .link-primary {
-  color: #7ed957 !important;
+  color: #204730 !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: #98e179 !important;
+  color: #1a3926 !important;
 }
 
 .link-secondary {
@@ -907,10 +909,10 @@ progress {
 }
 
 .link-success {
-  color: #7ed957 !important;
+  color: #204730 !important;
 }
 .link-success:hover, .link-success:focus {
-  color: #98e179 !important;
+  color: #1a3926 !important;
 }
 
 .link-info {
@@ -5122,16 +5124,16 @@ progress {
 
 .has-green-color,
 .has-green-color:visited {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-green-background-color {
-  background-color: #7ed957;
-  border-color: #7ed957;
+  background-color: #204730;
+  border-color: #204730;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-green-color {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-teal-color,
@@ -5220,16 +5222,16 @@ progress {
 
 .has-primary-color,
 .has-primary-color:visited {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-primary-background-color {
-  background-color: #7ed957;
-  border-color: #7ed957;
+  background-color: #204730;
+  border-color: #204730;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-primary-color {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-secondary-color,
@@ -5248,16 +5250,16 @@ progress {
 
 .has-success-color,
 .has-success-color:visited {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-success-background-color {
-  background-color: #7ed957;
-  border-color: #7ed957;
+  background-color: #204730;
+  border-color: #204730;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-success-color {
-  color: #7ed957;
+  color: #204730;
 }
 
 .has-info-color,
