@@ -139,10 +139,3 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 		</a>
 	</div>
 </div>
-
-
-<footer class="entry-footer">
-
-	<?php sargiasrilanka_entry_footer(); ?>
-
-</footer><!-- .entry-footer -->

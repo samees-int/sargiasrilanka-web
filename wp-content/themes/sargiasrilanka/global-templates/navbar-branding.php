@@ -31,4 +31,25 @@ if (!has_custom_logo()) { ?>
 <?php
 } else {
 	the_custom_logo('logo');
+
+	echo get_secondary_logo();
+	// // echo get_footer_logo();
+	// $footer_logo = get_footer_logo();
+
+	// if ($footer_logo) {
+	// 	echo '<img src="' . esc_url($footer_logo) . '" alt="Footer Logo">';
+	// }
+	// echo $footer_logo = get_theme_mod('footer_logo', '');
+	// $html = sprintf(
+	// 	'<a href="%1$s" class="custom-logo-link" rel="home" >%2$s</a>',
+	// 	esc_url(home_url('/')),
+	// 	$footer_logo
+	// );
+	// echo $html;
+?>
+	<!-- <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand custom-logo-link">
+
+	</a> -->
+
+<?php
 }

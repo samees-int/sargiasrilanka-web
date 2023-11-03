@@ -29,6 +29,8 @@ $sargiasrilanka_includes = array(
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
 	'/ajax-filter/tour-ajax-filter.php',
+	'/footer-logo.php', 					// upload logo
+	'/social-media-link.php', 					// upload logo
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

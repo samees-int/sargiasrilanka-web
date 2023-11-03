@@ -1,0 +1,238 @@
+.hero-wrapper {
+  .hero__main-images {
+    position: relative;
+    .hero__main-cloud {
+      position: absolute;
+      bottom: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 330px;
+      bottom: -1px;
+      width: 100%;
+      background: rgb(254, 254, 254);
+      background: linear-gradient(
+        180deg,
+        rgba(254, 254, 254, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+  }
+  .hero__main-content {
+    text-align: center;
+    h1 {
+      font-family: $font-family-secondary;
+      color: $primary;
+      font-size: 20px;
+      margin-bottom: 40px;
+      @include media-breakpoint-up(md) {
+        font-size: 20px;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 35px;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 42px;
+      }
+      @include media-breakpoint-up(xxl) {
+        font-size: 50px;
+      }
+      span {
+        font-size: 25px;
+        @include media-breakpoint-up(lg) {
+          font-size: 42px;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 50px;
+        }
+        @include media-breakpoint-up(xxl) {
+          font-size: 62px;
+        }
+      }
+    }
+    .hero__title-sub-head {
+      text-transform: uppercase;
+      font-family: $font-family-base;
+      font-size: 18px;
+      color: $primary--60;
+    }
+  }
+  .hero__video {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    color: $primary--80;
+    .hero__video-play {
+      margin-right: 10px;
+    }
+    .hero__video-info {
+      font-size: 14px;
+    }
+  }
+  .hero-wrapper--content {
+    margin-top: -140px;
+    margin-bottom: 40px;
+    position: relative;
+    // @include media-breakpoint-up(sm) {
+    //   margin-top: -210px;
+    // }
+    @include media-breakpoint-up(md) {
+      margin-top: -210px;
+      margin-bottom: 130px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: -250px;
+      margin-bottom: 40px;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-top: -320px;
+      margin-bottom: 70px;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.color-primary-40 {
+  color: $primary--40;
+}
+
+// Why Sargia
+.why-sargia-wrapper {
+  background-image: url(../assets/bg-curve.png);
+  background-repeat: no-repeat;
+  background-position-y: 150px;
+  background-position-x: right;
+  .why-sargia__title {
+    margin-bottom: 50px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 100px;
+    }
+  }
+  .why-sargia__sub-sec {
+    border-radius: 40%;
+    padding-bottom: 50px;
+    background-color: #fff;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 20px;
+    }
+    &.why-sargia__sub-sec--400 {
+      @include media-breakpoint-up(md) {
+        max-width: 400px;
+      }
+    }
+    &.why-sargia__sub-sec--200 {
+      max-width: 350px;
+    }
+    &.why-sargia__sub-sec--m100 {
+      @include media-breakpoint-up(md) {
+        margin-top: 100px;
+      }
+    }
+    .why-sargia__sub-sec--icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .why-sargia__sub-sec--title {
+      font-size: 22px;
+      color: $primary;
+      font-weight: 400;
+      margin-bottom: 15px;
+      font-family: $font-family-secondary;
+    }
+    .why-sargia__sub-sec--content {
+      font-family: $font-family-base;
+      font-size: 18px;
+      color: $primary;
+      font-weight: 400;
+    }
+    .why-sargia__sub-sec--readmore {
+      font-size: 18px;
+      color: $primary--40;
+      text-decoration: underline;
+      font-weight: 400;
+      font-family: $font-family-secondary;
+      margin-top: 30px;
+      display: block;
+    }
+  }
+  .why-sargia__images {
+    position: relative;
+    .why-sargia__images-block {
+      margin-bottom: 180px;
+      padding-right: 60px;
+      @include media-breakpoint-up(md) {
+        padding-right: 60px;
+        margin-bottom: 200px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-right: 70px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding-right: 100px;
+      }
+    }
+    .why-saria__image-1 {
+      transform: rotate(-3.49deg);
+      max-width: 200px;
+      @include media-breakpoint-up(md) {
+        max-width: 160px;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: 200px;
+      }
+      @include media-breakpoint-up(xl) {
+        max-width: 235px;
+      }
+    }
+    .why-saria__image-2,
+    .why-saria__image-3 {
+      position: absolute;
+    }
+    .why-saria__image-2 {
+      margin-top: 150px;
+      transform: rotate(-4.01deg);
+      margin-left: -230px;
+      max-width: 180px;
+      @include media-breakpoint-up(md) {
+        max-width: 140px;
+        margin-top: 120px;
+        margin-left: -180px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-top: 150px;
+        margin-left: -230px;
+        max-width: 180px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: -250px;
+        max-width: 214px;
+      }
+    }
+    .why-saria__image-3 {
+      margin-left: -65px;
+      margin-top: 100px;
+      max-width: 160px;
+      transform: rotate(3.44deg);
+
+      @include media-breakpoint-up(md) {
+        max-width: 120px;
+        margin-top: 80px;
+        margin-left: -55px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-left: -65px;
+        margin-top: 100px;
+        max-width: 160px;
+      }
+      @include media-breakpoint-up(xl) {
+        margin-left: -72px;
+        margin-top: 130px;
+        max-width: 190px;
+      }
+    }
+  }
+}

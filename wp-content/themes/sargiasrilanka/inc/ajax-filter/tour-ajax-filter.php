@@ -2,10 +2,17 @@
 add_action('wp_enqueue_scripts', 'enqueue_tour_ajax');
 function enqueue_tour_ajax()
 {
-    wp_enqueue_script('tour_ajax_scripts', get_template_directory_uri() . '/src/js/custom-ajax-script.js', array('jquery'), 1.0);
-    wp_localize_script('tour_ajax_scripts', 'frontendajaxint', array(
-        'ajaxurl' => admin_url('admin-ajax.php')
-    ));
+    wp_enqueue_script('tour_ajax_scripts', get_template_directory_uri() . '/js/tour-filter-ajax-scripts.js', array('jquery'), 1.0, true);
+    // wp_localize_script('tour_ajax_scripts', 'frontendajaxint', array(
+    //     'ajaxurl' => admin_url('admin-ajax.php')
+    // ));
+
+    // Localize the script with new data
+    $ajax_data = array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('tour_ajax_scripts')
+    );
+    wp_localize_script('tour_ajax_scripts', 'ajax_object', $ajax_data);
 }
 
 
@@ -14,7 +21,7 @@ function enqueue_tour_ajax()
 function tour_ajax_filter_posts()
 {
     $filters = $_POST['filters'];
-
+    // var_dump($filters);
     $args = array(
         'post_type' => 'sargia_tour',  // Replace with your custom post type
         'posts_per_page' => -1,
@@ -59,5 +66,5 @@ function tour_ajax_filter_posts()
     exit;  // Ensure no further processing after generating content
 }
 
-add_action('wp_ajax_get_filterd_post', 'tour_ajax_filter_posts');
-add_action('wp_ajax_nopriv_get_filterd_post', 'get_filterd_post');
+add_action('wp_ajax_tour_ajax_filter_posts', 'tour_ajax_filter_posts');
+add_action('wp_ajax_nopriv_tour_ajax_filter_posts', 'tour_ajax_filter_posts');

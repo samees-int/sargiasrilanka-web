@@ -4,8 +4,15 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700;900&display=swap");
 
-$green: #7ed957; // Thats a sample how you could change a BootStrap variable.
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+$green: #204730; // Thats a sample how you could change a BootStrap variable.
 $primary: $green; // Once we've changed the value, we'll also make it the primary brand color.
-$font-family-base: "Lato", sans-serif;
+$primary--80: #2a6f45;
+$primary--60: #45835e;
+$primary--40: #87c55b;
+$font-family-base: "Kanit", sans-serif;
+$font-family-secondary: "Libre Baskerville", serif;
 
 $text-gray: #767676;
+$navbar-nav-link-padding-x: 1rem;
