@@ -12,6 +12,12 @@
     font-family: $font-family-secondary;
     color: $primary;
     @include media-breakpoint-up(md) {
+      font-size: 42px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 57px;
+    }
+    @include media-breakpoint-up(xl) {
       font-size: 62px;
     }
   }
