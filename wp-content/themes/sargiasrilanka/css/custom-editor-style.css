@@ -5413,9 +5413,9 @@ body.sargiasrilanka-no-sidebar .wp-block-cover.alignwide {
 
 .wp-block-buttons .wp-block-button .wp-block-button__link {
   --bs-btn-padding-y: 0.375rem;
-  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-x: 30px;
   --bs-btn-font-size: 1rem;
-  --bs-btn-border-radius: 0.375rem;
+  --bs-btn-border-radius: 10rem;
 }
 .wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
   border: 1px solid transparent;

@@ -23,12 +23,12 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 <div class="" id="page-wrapper">
 	<!-- hero -->
 	<div class="hero-wrapper">
-		<div class="hero__main-images">
+		<div class="hero__main-images d-none">
 			<img src="<?php echo get_template_directory_uri() ?>/assets/hero-main.png" alt="" class="d-block img-fluid w-100">
 			<img src="<?php echo get_template_directory_uri() ?>/assets/footer-clouds.png" alt="" class="img-fluid w-100 hero__main-cloud" />
 		</div>
 		<div class="hero-wrapper--content">
-			<div class="container">
+			<div class="container z-index-1">
 				<div class="row">
 
 					<div class="col-md-6 col-lg-5 order-md-2">
@@ -121,6 +121,306 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 		</div>
 	</div>
 
+	<section class="sargia_discover">
+		<div class="sargia_discover--slider">
+			<div class="sargia_discover--slider-item text-only">
+				<div class="sargia_discover--slider-content">
+					<div class="sargia_discover--slider-text">
+						Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+					</div>
+					<div class="sargia_discover--slider-title">
+						<h2 class="h2">Discover
+							Sri Lanka</h2>
+					</div>
+				</div>
+			</div>
+			<div class="sargia_discover--slider-item">
+				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
+				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
+					<div class="sargia_discover--slider-content">
+						<div class="sargia_discover--slider-days">
+							2 Days
+						</div>
+						<div class="sargia_discover--slider-title">
+							<h3 class="h3">Sun sand in south coast</h3>
+						</div>
+						<div class="sargia_discover--slider-text">
+							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
+						</div>
+						<div class="sargia_discover--slider-readmore">
+							<a href="" class=""> More Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sargia_discover--slider-item">
+				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
+				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
+					<div class="sargia_discover--slider-content">
+						<div class="sargia_discover--slider-days">
+							3 Days
+						</div>
+						<div class="sargia_discover--slider-title">
+							<h3 class="h3">Sun sand in south coast</h3>
+						</div>
+						<div class="sargia_discover--slider-text">
+							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
+						</div>
+						<div class="sargia_discover--slider-readmore">
+							<a href="" class=""> More Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sargia_discover--slider-item">
+				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
+				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
+					<div class="sargia_discover--slider-content">
+						<div class="sargia_discover--slider-days">
+							4 Days
+						</div>
+						<div class="sargia_discover--slider-title">
+							<h3 class="h3">Sun sand in south coast</h3>
+						</div>
+						<div class="sargia_discover--slider-text">
+							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
+						</div>
+						<div class="sargia_discover--slider-readmore">
+							<a href="" class=""> More Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sargia_discover--slider-item">
+				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
+				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
+					<div class="sargia_discover--slider-content">
+						<div class="sargia_discover--slider-days">
+							5 Days
+						</div>
+						<div class="sargia_discover--slider-title">
+							<h3 class="h3">Sun sand in south coast</h3>
+						</div>
+						<div class="sargia_discover--slider-text">
+							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
+						</div>
+						<div class="sargia_discover--slider-readmore">
+							<a href="" class=""> More Details</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="tour-frature-wrapper">
+		<div class="tour-frature-slider">
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
+
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>Down South</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Hikkaduwa</li>
+											<li class="tour-feature-slider__attractions--city">Weligama</li>
+											<li class="tour-feature-slider__attractions--city">Galle</li>
+											<li class="tour-feature-slider__attractions--city">Galle Fort</li>
+											<li class="tour-feature-slider__attractions--city">Hambanthota</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action">
+
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-2.jpg);">
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>Down South</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Hikkaduwa</li>
+											<li class="tour-feature-slider__attractions--city">Weligama</li>
+											<li class="tour-feature-slider__attractions--city">Galle</li>
+											<li class="tour-feature-slider__attractions--city">Galle Fort</li>
+											<li class="tour-feature-slider__attractions--city">Hambanthota</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action">
+
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="tour-frature-slider__dots">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="tour-frature-slider__dots--list">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="travel-type">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section__title text-center">
+						<p class="section_subtitle">
+							bespoke travel experiences
+						</p>
+						<h2 class="h2">
+							<i>Handcrafted</i><br />
+							travel ideas
+						</h2>
+					</div>
+				</div>
+				<div class="col-md-4 travel-type__card__mt">
+					<div class="travel-type__card">
+						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-1.jpg);">
+							<div class="travel-type__card--title">
+								<span class="fst-italic">family</span> travel
+							</div>
+						</div>
+						<div class="travel-type__card--body">
+							<div class="travel-type__card--content">
+								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+							</div>
+							<div class="travel-type__card--action">
+								<a href="" class="btn btn-outline-primary">
+									Explore
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 travel-type__card__mt travel-type__card__bt">
+					<div class="travel-type__card">
+						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-2.jpg);">
+							<div class="travel-type__card--title">
+								<span class="fst-italic">private</span> travel
+							</div>
+						</div>
+						<div class="travel-type__card--body">
+							<div class="travel-type__card--content">
+								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+							</div>
+							<div class="travel-type__card--action">
+								<a href="" class="btn btn-outline-primary btn-rounded">
+									Explore
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 travel-type__card__mt">
+					<div class="travel-type__card">
+						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-3.jpg);">
+							<div class="travel-type__card--title">
+								<span class="fst-italic">honeymoons</span>
+							</div>
+						</div>
+						<div class="travel-type__card--body">
+							<div class="travel-type__card--content">
+								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+							</div>
+							<div class="travel-type__card--action">
+								<a href="" class="btn btn-outline-primary">
+									Explore
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="talk-to-us">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="section__title talk-to-us__title">
+						<p class="section_subtitle">
+							WE ARE AT YOUR SERVICE
+						</p>
+						<h2 class="h2">
+							talk to a
+							travel specialist
+						</h2>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="talk-to-us__list talk-to-us__phone text-center">
+						<div class="talk-to-us__list--content">
+							<i class="fa fa-phone"></i>
+							<br />
+							Call Us <br />
+							+94 773 717 933
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="talk-to-us__list talk-to-us__email text-center">
+						<div class="talk-to-us__list--content">
+							<i class="fa fa-envelope"></i><br />
+							Send an<br />
+							inquiery
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
 	<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
 		<div class="row">
