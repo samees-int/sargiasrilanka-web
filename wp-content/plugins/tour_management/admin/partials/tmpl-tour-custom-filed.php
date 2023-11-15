@@ -3,6 +3,10 @@
     <div class="tour-input"><input type="text" id="total_tour_days" name="tour_days[total_days]" value="<?php echo isset($tour_days['total_days']) ? esc_attr($tour_days['total_days']) : ''; ?>"></div>
 </div>
 <div class="tour-field">
+    <div class="tour-label"><label for="tour_prices">Tour Price:</label></div>
+    <div class="tour-input"><input type="text" id="tour_prices" name="tour_days[tour_price]" value="<?php echo isset($tour_days['tour_price']) ? esc_attr($tour_days['tour_price']) : ''; ?>"></div>
+</div>
+<div class="tour-field">
     <div class="tour-label"><label for="tour_days_disatance">Total Disatance :</label></div>
     <div class="tour-input"><input type="text" id="tour_days_disatance" name="tour_days[total_disatance]" value="<?php echo isset($tour_days['total_disatance']) ? esc_attr($tour_days['total_disatance']) : ''; ?>"></div>
 </div>
@@ -12,6 +16,8 @@
     <div class="tour-input"><input type="text" id="tour_days_stops" name="tour_days[total_stops]" value="<?php echo isset($tour_days['total_stops']) ? esc_attr($tour_days['total_stops']) : ''; ?>"></div>
     <small>Enter stops separated by commas.</small>
 </div>
+
+
 
 <div id="repeater-wrapper">
     <h3>Tour Itineraries Item</h3>
