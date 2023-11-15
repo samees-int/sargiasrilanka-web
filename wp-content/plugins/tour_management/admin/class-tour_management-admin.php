@@ -309,6 +309,7 @@ class Tour_management_Admin
 			$tour_days_data = array(
 				'total_days' => sanitize_text_field($_POST['tour_days']['total_days']),
 				'total_disatance' => sanitize_text_field($_POST['tour_days']['total_disatance']),
+				'tour_price' => sanitize_text_field($_POST['tour_days']['tour_price']),
 				'total_stops' => sanitize_text_field($_POST['tour_days']['total_stops']),
 				'map_image_id' => sanitize_text_field($_POST['tour_days']['map_image_id']),
 				'repeater' => array(),
