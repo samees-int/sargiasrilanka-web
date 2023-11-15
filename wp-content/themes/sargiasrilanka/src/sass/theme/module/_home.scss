@@ -20,7 +20,9 @@
     }
   }
   .hero__main-content {
+    max-width: 635px;
     text-align: center;
+    margin: 0 auto;
     h1 {
       font-family: $font-family-secondary;
       color: $primary;
@@ -64,7 +66,7 @@
     height: 100%;
     color: $primary--80;
     .hero__video-play {
-      margin-right: 10px;
+      margin-right: 20px;
     }
     .hero__video-info {
       font-size: 14px;
@@ -76,6 +78,7 @@
     height: 800px;
     display: flex;
     align-items: flex-end;
+    background-position: center;
     padding-bottom: 80px;
     // margin-top: -140px;
     // margin-bottom: 40px;
@@ -161,7 +164,7 @@
     }
     .why-sargia__sub-sec--title {
       font-size: 22px;
-      color: $primary;
+      color: $primary--80;
       font-weight: 400;
       margin-bottom: 15px;
       font-family: $font-family-secondary;
@@ -169,7 +172,7 @@
     .why-sargia__sub-sec--content {
       font-family: $font-family-base;
       font-size: 18px;
-      color: $primary;
+      color: $primary--80;
       font-weight: 400;
     }
     .why-sargia__sub-sec--readmore {
@@ -270,27 +273,104 @@
       padding: 0 7% 0 0 !important;
     }
   }
+  .sargia_discover__title {
+    margin-bottom: 40px;
+    .sargia_discover__title--text {
+      .section_subtitle {
+        font-weight: 300;
+        color: $primary--80;
+        font-size: 16px;
+      }
+    }
+  }
   .sargia_discover--slider {
     margin: 0;
     padding: 0;
     list-style: none;
+    .slick-slide {
+      min-height: 0;
+      width: 360px;
+      padding: 0 5px;
+
+      @include media-breakpoint-up(md) {
+        width: 418px;
+        padding: 0 20px;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: 418px;
+      }
+      @include media-breakpoint-up(xl) {
+        max-width: 418px;
+      }
+      &:first-child {
+        @include media-breakpoint-up(md) {
+          max-width: 600px;
+          width: 600px;
+        }
+        @include media-breakpoint-up(lg) {
+          max-width: 600px;
+          width: 600px;
+        }
+        @include media-breakpoint-up(xl) {
+          max-width: 600px;
+        }
+      }
+    }
+    .sargia_discover__next,
+    .sargia_discover__pre {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 40px;
+      }
+      &::before {
+        content: none;
+      }
+      &.slick-disabled {
+        opacity: 0;
+      }
+    }
     .sargia_discover--slider-item {
       position: relative;
       color: $white;
-      padding: 0 20px;
       height: 700px;
+      padding: 2px;
+      border: 1px dashed $white;
+      &:not(.text-only) {
+        &:hover {
+          border-color: $primary;
+        }
+      }
+
+      .sargia_discover--slider-item__link {
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        bottom: 0;
+        /* width: 100%; */
+        left: 0;
+        right: 0;
+      }
       &.text-only {
         padding: 20px;
         color: $primary;
         .sargia_discover--slider-content {
           padding: 20px;
+          min-width: 400px;
           @include media-breakpoint-up(md) {
             padding: 40px;
+          }
+          .sargia_discover--slider-text {
+            color: $primary--80;
           }
         }
         .h2 {
           font-family: $font-family-secondary;
           font-size: 50px;
+          color: $primary--60;
           @include media-breakpoint-up(md) {
             font-size: 42px;
           }
@@ -312,6 +392,7 @@
         left: 0;
         background-size: cover;
         bottom: 0;
+        width: 100%;
 
         .sargia_discover--slider-days {
           font-size: 18px;
@@ -332,13 +413,21 @@
         .sargia_discover--slider-text {
           font-weight: 300;
           font-size: 16px;
+          color: $white;
           margin-bottom: 30px;
+        }
+
+        .sargia_discover--slider--action {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
         .sargia_discover--slider-readmore {
           border: 1px solid $white;
           border-radius: 30px;
-          padding: 5px 10px;
+          padding: 8px 40px;
           display: inline-block;
+          margin-right: 10px;
           a {
             color: $white;
             text-decoration: none;
@@ -457,6 +546,7 @@
     display: flex;
     list-style: none;
     margin: 0;
+    width: auto;
     padding: 0;
     li {
       width: 30px;
@@ -482,6 +572,9 @@
 
 .travel-type {
   margin-top: 80px;
+  .section__title .h2 {
+    color: $primary--60;
+  }
   .travel-type__card {
     .travel-type__card--image {
       background-repeat: no-repeat;
