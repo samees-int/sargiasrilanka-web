@@ -6,6 +6,12 @@
     .nav-item {
       position: relative;
       margin: 1rem;
+      @include media-breakpoint-up(md) {
+        margin: 10px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin: 1rem;
+      }
       &.primary-underline {
         &::after {
           @include media-breakpoint-up(md) {
@@ -23,14 +29,14 @@
         bottom: 0;
         transition: all 0.5s;
       }
-      &:hover {
+      &:not(.menu-button):hover {
         &::after {
           width: 100%;
         }
       }
-      .active {
-      }
+
       .nav-link {
+        text-transform: uppercase;
         padding: 0;
         color: $white;
         font-weight: 400;
@@ -43,9 +49,6 @@
 
         &:focus {
           text-decoration: none;
-        }
-        &:hover,
-        &.active {
         }
       }
       &.active {
@@ -64,6 +67,24 @@
       &:last-child {
         .nav-link {
           padding-right: 0;
+        }
+      }
+      &.menu-button {
+        .nav-link {
+          display: inline-block;
+          background-color: $primary--40;
+          border-radius: 10rem;
+          padding: 2px 15px;
+          &.has-bg-white {
+            @include media-breakpoint-up(md) {
+              color: $white;
+            }
+          }
+        }
+        &:hover {
+          .nav-link {
+            background-color: $primary--60;
+          }
         }
       }
     }

@@ -31,19 +31,19 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			<div class="container z-index-1">
 				<div class="row">
 
-					<div class="col-md-6 col-lg-5 order-md-2">
+					<div class="col-md-12 col-lg-12 ">
 						<div class="hero__main-content">
 							<p class="hero__title-sub-head">YOUR JOURNEY WITH ENDLESS EXPERIENCES</p>
 							<h1>Unforgettable travel experience on the <span class="fst-italic">heaven</span> on earth </h1>
 						</div>
 					</div>
-					<div class="col-md-5 col-lg-4 order-md-1">
+					<div class="col-md-12 col-lg-12 ">
 						<div class="hero__video">
 							<div class="hero__video-play">
-								<i class="fa fa-play-circle fa-3x"></i>
+								<img src="<?php echo get_template_directory_uri() ?>/assets/icons/video.svg">
 							</div>
 							<div class="hero__video-info">
-								<div class="hero__video-info--title"><i class="fa fa-map-marker color-primary-40"></i>&nbsp; Sigiriya, North Central Province</div>
+								<div class="hero__video-info--title"><img src="<?php echo get_template_directory_uri() ?>/assets/icons/mappin.svg">&nbsp; Sigiriya, North Central Province</div>
 								<div class="hero__video-info--user">© Charith Kodagoda</div>
 							</div>
 						</div>
@@ -53,6 +53,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			</div>
 		</div>
 	</div>
+	<!-- Why Sargia Section -->
 	<div class="why-sargia-wrapper section">
 		<div class="container">
 			<div class="row">
@@ -79,7 +80,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				<div class="col-md-3 order-md-1">
 					<div class="why-sargia__sub-sec text-center">
 						<div class="why-sargia__sub-sec--icon">
-							<i class="fa fa-user"></i>
+							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/experience.svg">
 						</div>
 						<h4 class="why-sargia__sub-sec--title">Our Experience</h4>
 						<p class="why-sargia__sub-sec--content">
@@ -88,7 +89,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 					</div>
 					<div class="why-sargia__sub-sec  text-center why-sargia__sub-sec--m100">
 						<div class="why-sargia__sub-sec--icon">
-							<i class="fa fa-user"></i>
+							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/unmatched-services.svg">
 						</div>
 						<h4 class="why-sargia__sub-sec--title">Unmatched Services</h4>
 						<p class="why-sargia__sub-sec--content ">
@@ -108,7 +109,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 					</div>
 					<div class="why-sargia__sub-sec text-center why-sargia__sub-sec--200 mx-auto mt-5">
 						<div class="why-sargia__sub-sec--icon">
-							<i class="fa fa-user"></i>
+							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/sustainbility.svg">
 						</div>
 						<h4 class="why-sargia__sub-sec--title">Our commitment
 							to sustainability</h4>
@@ -121,9 +122,28 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 		</div>
 	</div>
 
+	<!-- Sargia Discover Slider -->
 	<section class="sargia_discover">
+		<div class="sargia_discover__title d-md-none">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section__title text-center sargia_discover__title--text ">
+							<h2 class="h2">
+								Discover
+								Sri Lanka
+							</h2>
+							<p class="section_subtitle">
+								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="sargia_discover--slider">
-			<div class="sargia_discover--slider-item text-only">
+			<div class="sargia_discover--slider-item text-only d-none d-md-inline-block">
 				<div class="sargia_discover--slider-content">
 					<div class="sargia_discover--slider-text">
 						Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
@@ -134,25 +154,59 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 					</div>
 				</div>
 			</div>
-			<div class="sargia_discover--slider-item">
-				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
-				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
-					<div class="sargia_discover--slider-content">
-						<div class="sargia_discover--slider-days">
-							2 Days
-						</div>
-						<div class="sargia_discover--slider-title">
-							<h3 class="h3">Sun sand in south coast</h3>
-						</div>
-						<div class="sargia_discover--slider-text">
-							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
-						</div>
-						<div class="sargia_discover--slider-readmore">
-							<a href="" class=""> More Details</a>
+
+			<?php
+			$args = array(
+				'post_type' => 'sargia_tour',
+				'posts_per_page' => 10
+			);
+			$loop = new WP_Query($args);
+			while ($loop->have_posts()) : $loop->the_post();
+				// echo "saaa<br/>";
+				// the_title();
+				// var_dump($loop->the_post());
+				$tour_info_meta = get_post_meta(get_the_ID(), 'tour_days', true);
+				// var_dump($tour_info_meta['total_days']);
+				if (has_post_thumbnail()) {
+			?>
+
+					<div class="sargia_discover--slider-item">
+						<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider- 1.jpg" alt=""> -->
+						<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>');">
+							<a href="<?php echo get_permalink(get_the_ID()); ?>" class="sargia_discover--slider-item__link"></a>
+							<div class="sargia_discover--slider-content">
+								<?php
+								if (!empty($tour_info_meta['total_days'])) {
+								?>
+									<div class="sargia_discover--slider-days">
+										<?php echo $tour_info_meta['total_days']; ?> Days
+									</div>
+								<?php  } ?>
+								<div class="sargia_discover--slider-title">
+									<h3 class="h3"><?php the_title() ?></h3>
+								</div>
+								<div class="sargia_discover--slider-text">
+									<?php the_excerpt(); ?>
+								</div>
+								<div class="sargia_discover--slider--action">
+									<div class="sargia_discover--slider-readmore">
+										<a href="" class=""> More Details</a>
+									</div>
+									<?php if (!empty($tour_info_meta['tour_price'])) { ?>
+										<div class="sargia_discover--slider-tour-price">
+											<?php echo $tour_info_meta['tour_price']; ?>
+										</div>
+									<?php
+									}
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+			<?php
+				}
+			endwhile;
+			?>
 			<div class="sargia_discover--slider-item">
 				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
 				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
@@ -212,6 +266,20 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			</div>
 
 		</div>
+		<!-- <div class="slider-nav">
+			<div class="container">
+				<div class="row">
+					<div class="slider-arrows">
+						<div class="slider-preview">
+							<img src="<?php echo get_template_directory_uri() ?>/assets/arrowright.svg" alt="">
+						</div>
+						<div class="slider-next">
+							<img src="<?php echo get_template_directory_uri() ?>/assets/arrowleft.svg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 	</section>
 
 	<section class="tour-frature-wrapper">

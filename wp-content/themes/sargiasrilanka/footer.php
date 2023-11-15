@@ -81,7 +81,16 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 							<a href="">North trips</a>
 						</li>
 						<li class="site-footer__menu--item">
-							3-7 days
+							Down south trips
+						</li>
+						<li class="site-footer__menu--item">
+							East coast trips
+						</li>
+						<li class="site-footer__menu--item">
+							Central hills trips
+						</li>
+						<li class="site-footer__menu--item">
+							Colombo & Western trips
 						</li>
 
 					</ul>
@@ -94,19 +103,22 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 					</div>
 					<ul class="site-footer__menu--items">
 						<li class="site-footer__menu--item">
-							3-7 days
+							Western
 						</li>
 						<li class="site-footer__menu--item">
-							3-7 days
+							East coast
 						</li>
 						<li class="site-footer__menu--item">
-							3-7 days
+							Down south
 						</li>
 						<li class="site-footer__menu--item">
-							3-7 days
+							Central hills
 						</li>
 						<li class="site-footer__menu--item">
-							3-7 days
+							Colombo & Western
+						</li>
+						<li class="site-footer__menu--item">
+							North
 						</li>
 
 					</ul>
