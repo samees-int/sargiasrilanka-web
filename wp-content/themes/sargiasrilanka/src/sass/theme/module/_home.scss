@@ -73,7 +73,7 @@
     }
   }
   .hero-wrapper--content {
-    background-image: url(../assets/hero-bg.png);
+    background-image: url(../assets/hero-bg.jpg);
     background-size: cover;
     height: 800px;
     display: flex;
@@ -204,6 +204,7 @@
     .why-saria__image-1 {
       transform: rotate(-3.49deg);
       max-width: 200px;
+      display: inline-block;
       @include media-breakpoint-up(md) {
         max-width: 160px;
       }
@@ -220,9 +221,11 @@
     }
     .why-saria__image-2 {
       margin-top: 150px;
-      transform: rotate(-4.01deg);
       margin-left: -230px;
       max-width: 180px;
+      img {
+        transform: rotate(-4.01deg);
+      }
       @include media-breakpoint-up(md) {
         max-width: 140px;
         margin-top: 120px;
@@ -242,8 +245,9 @@
       margin-left: -65px;
       margin-top: 100px;
       max-width: 160px;
-      transform: rotate(3.44deg);
-
+      img {
+        transform: rotate(3.44deg);
+      }
       @include media-breakpoint-up(md) {
         max-width: 120px;
         margin-top: 80px;
@@ -450,6 +454,7 @@
     background-position: center;
     background-size: cover;
     color: $white;
+    height: 100%;
 
     position: relative;
     &::after {
@@ -464,7 +469,7 @@
     }
     .tour-feature-slider__content-main {
       z-index: 2;
-      padding: 130px 0;
+      padding: 55px 0;
       position: relative;
     }
     .tour-feature-slider__content {
@@ -540,7 +545,7 @@
   position: relative;
   display: block;
   height: auto;
-  top: -56px;
+  top: -35px;
 
   ul.slick-dots {
     display: flex;
@@ -559,6 +564,9 @@
         color: $gray-200;
         border: none;
         padding: 2px;
+        &::before {
+          visibility: hidden;
+        }
       }
       &.slick-active {
         button {

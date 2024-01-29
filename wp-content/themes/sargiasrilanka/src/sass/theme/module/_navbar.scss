@@ -2,6 +2,15 @@
   .navbar-brand {
     width: 150px;
   }
+  &.navbar-white {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $primary--60;
+        }
+      }
+    }
+  }
   .navbar-nav {
     .nav-item {
       position: relative;
@@ -51,7 +60,7 @@
           text-decoration: none;
         }
       }
-      &.active {
+      &.active:not(.menu-button) {
         &::after {
           width: 100%;
         }

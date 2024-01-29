@@ -19,14 +19,10 @@ get_header();
 $container = get_theme_mod('sargiasrilanka_container_type');
 
 ?>
-
-<div class="" id="page-wrapper">
+<div id="page-wrapper">
 	<!-- hero -->
 	<div class="hero-wrapper">
-		<div class="hero__main-images d-none">
-			<img src="<?php echo get_template_directory_uri() ?>/assets/hero-main.png" alt="" class="d-block img-fluid w-100">
-			<img src="<?php echo get_template_directory_uri() ?>/assets/footer-clouds.png" alt="" class="img-fluid w-100 hero__main-cloud" />
-		</div>
+
 		<div class="hero-wrapper--content">
 			<div class="container z-index-1">
 				<div class="row">
@@ -47,7 +43,6 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 								<div class="hero__video-info--user">© Charith Kodagoda</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -59,10 +54,10 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			<div class="row">
 				<div class="col-12">
 					<div class="section__title text-center why-sargia__title">
-						<p class="section_subtitle">
+						<p class="section_subtitle" data-aos="zoom-in-up">
 							What Makes us Special
 						</p>
-						<h2 class="h2">
+						<h2 class="h2" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-center">
 							Why Sargia
 						</h2>
 					</div>
@@ -70,30 +65,30 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				<div class="w-100"></div>
 				<div class="col-md-4 order-md-3">
 					<div class="why-sargia__sub-sec why-sargia__sub-sec--400">
-						<h4 class="why-sargia__sub-sec--title">Our Passion</h4>
-						<p class="why-sargia__sub-sec--content">
-							At Sargia, we believe that travel is not just about checking off a list of destinations or landmarks. It's about the experiences and emotions that come with it. It's about connecting with the people, their culture, and their way of life. We strive to design travel experiences that goes beyond, immersing you in the heart of a destination and allowing you to truly understand and appreciate it.
+						<h4 class="why-sargia__sub-sec--title" data-aos="fade-up">Our Passion</h4>
+						<p class="why-sargia__sub-sec--content" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".why-sargia__sub-sec--title">
+							At Sargia Sri Lanka, we believe that travel is not just about checking off a list of destinations or landmarks. It's about the experiences and emotions that come with it. It's about connecting with the people, their culture, and their way of life. We strive to design travel experiences that go beyond, immersing you in the heart of a destination and allowing you to truly understand and appreciate it.
 						</p>
-						<a href="#" class="why-sargia__sub-sec--readmore">Read more about us</a>
+						<a href="#" class="why-sargia__sub-sec--readmore" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".why-sargia__sub-sec--content">Read more about us</a>
 					</div>
 				</div>
 				<div class="col-md-3 order-md-1">
-					<div class="why-sargia__sub-sec text-center">
-						<div class="why-sargia__sub-sec--icon">
+					<div class="why-sargia__sub-sec text-center" data-aos="fade-up">
+						<div class="why-sargia__sub-sec--icon" data-aos="fade-up">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/experience.svg">
 						</div>
-						<h4 class="why-sargia__sub-sec--title">Our Experience</h4>
-						<p class="why-sargia__sub-sec--content">
-							You can expect a personalised and original experience that caters to your interests and preferences
+						<h4 class="why-sargia__sub-sec--title" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".why-sargia__sub-sec--icon">Bespoke Experiences </h4>
+						<p class="why-sargia__sub-sec--content" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".why-sargia__sub-sec--title">
+							we're offering travelers the opportunity to go beyond the typical tourist experience and truly immerse themselves in the destination
 						</p>
 					</div>
-					<div class="why-sargia__sub-sec  text-center why-sargia__sub-sec--m100">
-						<div class="why-sargia__sub-sec--icon">
+					<div class="why-sargia__sub-sec  text-center why-sargia__sub-sec--m100" data-aos="fade-up">
+						<div class="why-sargia__sub-sec--icon" data-aos="fade-up">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/unmatched-services.svg">
 						</div>
-						<h4 class="why-sargia__sub-sec--title">Unmatched Services</h4>
-						<p class="why-sargia__sub-sec--content ">
-							You can expect a personalised and original experience that caters to your interests and preferences
+						<h4 class="why-sargia__sub-sec--title" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".why-sargia__sub-sec--icon">Community Tourism Initiative</h4>
+						<p class="why-sargia__sub-sec--content " data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".why-sargia__sub-sec--title">
+							building a network of locals who work closely with their respective communities to provide tourists with a genuine and enriching travel experience
 						</p>
 					</div>
 				</div>
@@ -102,19 +97,18 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				<div class="col-md-5 order-md-2">
 					<div class="why-sargia__images text-center">
 						<div class="why-sargia__images-block">
-							<img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-2.jpg" alt="" class="why-saria__image-1">
-							<img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-4.jpg" alt="" class="why-saria__image-2">
-							<img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-3.jpg" alt="" class="why-saria__image-3">
+							<span class="why-saria__image-1" data-aos="fade-up" data-aos-anchor=".why-sargia__sub-sec--icon"><img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-2.jpg" alt=""></span>
+							<span class="why-saria__image-2" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".why-sargia__sub-sec--icon"><img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-4.jpg" alt=""></span>
+							<span class="why-saria__image-3" data-aos="fade-up" data-aos-delay="300" data-aos-anchor=".why-sargia__sub-sec--icon"><img src="<?php echo  get_template_directory_uri() ?>/assets/why-sargia-3.jpg" alt=""></span>
 						</div>
 					</div>
-					<div class="why-sargia__sub-sec text-center why-sargia__sub-sec--200 mx-auto mt-5">
-						<div class="why-sargia__sub-sec--icon">
+					<div class="why-sargia__sub-sec text-center why-sargia__sub-sec--200 mx-auto mt-5" data-aos="fade-up-down">
+						<div class="why-sargia__sub-sec--icon" data-aos="fade-up">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/icons/sustainbility.svg">
 						</div>
-						<h4 class="why-sargia__sub-sec--title">Our commitment
-							to sustainability</h4>
-						<p class="why-sargia__sub-sec--content">
-							to ensure that our travel experiences have a positive impact on the environment and the local communities we visit
+						<h4 class="why-sargia__sub-sec--title" data-aos="fade-up" data-aos-delay="100ms" data-aos-anchor="why-sargia__sub-sec--icon">Discovering Hidden Gems</h4>
+						<p class="why-sargia__sub-sec--content" data-aos="fade-up" data-aos-delay="200ms" data-aos-anchor="why-sargia__sub-sec--title">
+							Engaging in immersive travel concepts with local hosts allows travelers to discover hidden gems and explore off-the-beaten locations
 						</p>
 					</div>
 				</div>
@@ -207,63 +201,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				}
 			endwhile;
 			?>
-			<div class="sargia_discover--slider-item">
-				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
-				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
-					<div class="sargia_discover--slider-content">
-						<div class="sargia_discover--slider-days">
-							3 Days
-						</div>
-						<div class="sargia_discover--slider-title">
-							<h3 class="h3">Sun sand in south coast</h3>
-						</div>
-						<div class="sargia_discover--slider-text">
-							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
-						</div>
-						<div class="sargia_discover--slider-readmore">
-							<a href="" class=""> More Details</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="sargia_discover--slider-item">
-				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
-				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
-					<div class="sargia_discover--slider-content">
-						<div class="sargia_discover--slider-days">
-							4 Days
-						</div>
-						<div class="sargia_discover--slider-title">
-							<h3 class="h3">Sun sand in south coast</h3>
-						</div>
-						<div class="sargia_discover--slider-text">
-							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
-						</div>
-						<div class="sargia_discover--slider-readmore">
-							<a href="" class=""> More Details</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="sargia_discover--slider-item">
-				<!-- <img src="<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg" alt=""> -->
-				<div class="sargia_discover--slider-item-bg" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/slider/slider-1.jpg');">
-					<div class="sargia_discover--slider-content">
-						<div class="sargia_discover--slider-days">
-							5 Days
-						</div>
-						<div class="sargia_discover--slider-title">
-							<h3 class="h3">Sun sand in south coast</h3>
-						</div>
-						<div class="sargia_discover--slider-text">
-							So whether you're interested in exploring ancient ruins, spotting wildlife in a national park
-						</div>
-						<div class="sargia_discover--slider-readmore">
-							<a href="" class=""> More Details</a>
-						</div>
-					</div>
-				</div>
-			</div>
+
 
 		</div>
 		<!-- <div class="slider-nav">
@@ -285,37 +223,36 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 	<section class="tour-frature-wrapper">
 		<div class="tour-frature-slider">
 			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
-
 				<div class="tour-feature-slider__content-main">
 					<div class="container ">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-8">
 								<div class="tour-feature-slider__content">
 									<div class="tour-feature-slider__subheading">
 										Explore the best of the Island
 									</div>
 									<div class="tour-feature-slider__heading">
-										<h2>Down South</h2>
+										<h2>West Cost</h2>
 									</div>
 									<div class="tour-feature-slider__paragraph">
-										Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+										The western coast of Sri Lanka boasts bustling urban centers, rich colonial heritage, and stunning beaches that attract tourists seeking both cultural experiences and seaside relaxation. It's a vibrant region offering a mix of historical charm and modern amenities.
 									</div>
 									<div class="tour-feature-slider__attractions">
 										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
 										<ul class="tour-feature-slider__attractions--cities">
-											<li class="tour-feature-slider__attractions--city">Hikkaduwa</li>
-											<li class="tour-feature-slider__attractions--city">Weligama</li>
-											<li class="tour-feature-slider__attractions--city">Galle</li>
-											<li class="tour-feature-slider__attractions--city">Galle Fort</li>
-											<li class="tour-feature-slider__attractions--city">Hambanthota</li>
+											<li class="tour-feature-slider__attractions--city">Kalpitiya</li>
+											<li class="tour-feature-slider__attractions--city">Chillaw</li>
+											<li class="tour-feature-slider__attractions--city">Negombo</li>
+											<li class="tour-feature-slider__attractions--city">Colombo</li>
+											<li class="tour-feature-slider__attractions--city">Mount Lavinia</li>
+											<li class="tour-feature-slider__attractions--city">Kaluthara</li>
+											<li class="tour-feature-slider__attractions--city">Beruwala</li>
 										</ul>
 									</div>
 								</div>
-								<div class="tour-feature-slider__action">
-
-								</div>
+								<div class="tour-feature-slider__action"></div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="tour-feature-slider__map">
 									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
 								</div>
@@ -329,7 +266,86 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				<div class="tour-feature-slider__content-main">
 					<div class="container ">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-8">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>Cultural Tringle</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										The Cultural Triangle in Sri Lanka is a treasure trove of ancient marvels,featuring UNESCO World Heritage Sites like Sigiriya, Polonnaruwa, and Anuradhapura, showcasing the country&#39;s rich historical and architectural heritage. This region offers an immersive journey into the island&#39;s ancient history, temples, and remarkable ruins, drawing history enthusiasts and curious travelers alike.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Anuradhapura</li>
+											<li class="tour-feature-slider__attractions--city">Polonnaruwa</li>
+											<li class="tour-feature-slider__attractions--city">Kavudulla</li>
+											<li class="tour-feature-slider__attractions--city">Minneriya</li>
+											<li class="tour-feature-slider__attractions--city">Sigiriya</li>
+											<li class="tour-feature-slider__attractions--city">Dambulla</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>North</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										The northern coast of Sri Lanka showcases a unique blend of cultural diversity and historical significance, shaped by its past and vibrant present. It's a region rich in heritage, with sites like Jaffna's iconic temples and forts, offering glimpses into the area's cultural tapestry.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Jaffna</li>
+											<li class="tour-feature-slider__attractions--city">Kilinochchi</li>
+											<li class="tour-feature-slider__attractions--city">Mannar</li>
+											<li class="tour-feature-slider__attractions--city">Vavuniya</li>
+											<li class="tour-feature-slider__attractions--city">Mullaitivu</li>
+											<li class="tour-feature-slider__attractions--city">Point Pedro</li>
+											<li class="tour-feature-slider__attractions--city">Chavakachcheri</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-8">
 								<div class="tour-feature-slider__content">
 									<div class="tour-feature-slider__subheading">
 										Explore the best of the Island
@@ -338,24 +354,101 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 										<h2>Down South</h2>
 									</div>
 									<div class="tour-feature-slider__paragraph">
-										Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
+										Down South in Sri Lanka captivates with its pristine beaches, idyllic coastal towns, and a relaxed atmosphere, making it a haven for beach lovers and those seeking a laid-back escape. The region's charm lies in its scenic landscapes, tranquil beaches, and opportunities for coastal exploration and relaxation.
 									</div>
 									<div class="tour-feature-slider__attractions">
 										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
 										<ul class="tour-feature-slider__attractions--cities">
-											<li class="tour-feature-slider__attractions--city">Hikkaduwa</li>
-											<li class="tour-feature-slider__attractions--city">Weligama</li>
 											<li class="tour-feature-slider__attractions--city">Galle</li>
-											<li class="tour-feature-slider__attractions--city">Galle Fort</li>
-											<li class="tour-feature-slider__attractions--city">Hambanthota</li>
+											<li class="tour-feature-slider__attractions--city">Weligama</li>
+											<li class="tour-feature-slider__attractions--city">Hikkaduwa</li>
+											<li class="tour-feature-slider__attractions--city">Mirissa</li>
+											<li class="tour-feature-slider__attractions--city">Matara</li>
+											<li class="tour-feature-slider__attractions--city">Tangalle</li>
+											<li class="tour-feature-slider__attractions--city">Dickwella</li>
+											<li class="tour-feature-slider__attractions--city">Yala</li>
+											<li class="tour-feature-slider__attractions--city">Tissamaharama</li>
 										</ul>
 									</div>
 								</div>
-								<div class="tour-feature-slider__action">
-
+								<div class="tour-feature-slider__action"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
 								</div>
 							</div>
-							<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>Central Hills</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										The Central Hills of Sri Lanka are a breathtaking expanse of lush tea plantations, misty mountains, and charming hill towns like Nuwara Eliya, offering a cool climate and stunning panoramas. This region is a haven for nature lovers and hikers, boasting scenic landscapes, cascading waterfalls, and a serene escape from the island's tropical heat.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Matale</li>
+											<li class="tour-feature-slider__attractions--city">Kandy</li>
+											<li class="tour-feature-slider__attractions--city">Nuwara Eliya</li>
+											<li class="tour-feature-slider__attractions--city">Hatton</li>
+											<li class="tour-feature-slider__attractions--city">Bandarawela</li>
+											<li class="tour-feature-slider__attractions--city">Haputale</li>
+											<li class="tour-feature-slider__attractions--city">Ella</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="tour-feature-slider__map">
+									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tour-feature-slider__background" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/tour-frature-bg-1.png);">
+				<div class="tour-feature-slider__content-main">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="tour-feature-slider__content">
+									<div class="tour-feature-slider__subheading">
+										Explore the best of the Island
+									</div>
+									<div class="tour-feature-slider__heading">
+										<h2>West Cost</h2>
+									</div>
+									<div class="tour-feature-slider__paragraph">
+										The East Coast of Sri Lanka enchants with its pristine beaches, azure waters, and a more tranquil ambiance, perfect for relaxation and water-based activities like snorkeling and surfing. This region showcases a quieter charm, boasting untouched beauty and a serene coastal escape for travelers seeking a more laid-back experience.
+									</div>
+									<div class="tour-feature-slider__attractions">
+										<h4 class="tour-feature-slider__attractions--title"><i class="fa fa-map-marker me-2"></i>Top Attractions</h4>
+										<ul class="tour-feature-slider__attractions--cities">
+											<li class="tour-feature-slider__attractions--city">Trincomalee</li>
+											<li class="tour-feature-slider__attractions--city">Batticaloa</li>
+											<li class="tour-feature-slider__attractions--city">Arugam Bay</li>
+											<li class="tour-feature-slider__attractions--city">Passikudah</li>
+										</ul>
+									</div>
+								</div>
+								<div class="tour-feature-slider__action"></div>
+							</div>
+							<div class="col-md-4">
 								<div class="tour-feature-slider__map">
 									<img class="tour-feature-slider__map--img" src="<?php echo get_template_directory_uri() ?>/assets/map.png" />
 								</div>
@@ -394,12 +487,12 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 				</div>
 				<div class="col-md-4 travel-type__card__mt">
 					<div class="travel-type__card">
-						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-1.jpg);">
+						<div data-aos="fade-up" class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-1.jpg);">
 							<div class="travel-type__card--title">
-								<span class="fst-italic">family</span> travel
+								<span class="fst-italic" data-aos="fade-up">family</span> travel
 							</div>
 						</div>
-						<div class="travel-type__card--body">
+						<div class="travel-type__card--body" data-aos="fade-up" data-aos-offset="100" data-aos-anchor=".travel-type__card--title">
 							<div class="travel-type__card--content">
 								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
 							</div>
@@ -411,14 +504,14 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 travel-type__card__mt travel-type__card__bt">
+				<div class="col-md-4 travel-type__card__mt travel-type__card__bt" data-aos="fade-up" data-aos-delay="100">
 					<div class="travel-type__card">
 						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-2.jpg);">
-							<div class="travel-type__card--title">
+							<div class="travel-type__card--title" data-aos="fade-up">
 								<span class="fst-italic">private</span> travel
 							</div>
 						</div>
-						<div class="travel-type__card--body">
+						<div class="travel-type__card--body" data-aos="fade-up" data-aos-anchor=".travel-type__card--title">
 							<div class="travel-type__card--content">
 								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
 							</div>
@@ -430,14 +523,14 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 travel-type__card__mt">
+				<div class="col-md-4 travel-type__card__mt" data-aos="fade-up" data-aos-delay="200">
 					<div class="travel-type__card">
 						<div class="travel-type__card--image" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/travel-type-3.jpg);">
 							<div class="travel-type__card--title">
 								<span class="fst-italic">honeymoons</span>
 							</div>
 						</div>
-						<div class="travel-type__card--body">
+						<div class="travel-type__card--body" data-aos="fade-up" data-aos-anchor=".travel-type__card--title">
 							<div class="travel-type__card--content">
 								Sri Lanka truly is a destination that offers something for every type of traveller, from its rich cultural heritage to its stunning natural landscapes and delicious cuisine.
 							</div>
@@ -452,6 +545,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			</div>
 		</div>
 	</section>
+
 	<section class="talk-to-us">
 		<div class="container">
 			<div class="row">
