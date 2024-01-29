@@ -1,9 +1,15 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+// @import "../../../node_modules/locomotive-scroll/dist/locomotive-scroll";
 @import "./module/base";
 @import "./module/navbar";
 @import "./module/home";
+@import "./module/destination";
 @import "./module/catpage";
 @import "./module/footer";
 @import "./module/tour_single";
 @import "./module/slick";
 @import "./module/slick-theme";
+@import "./module/locomotive/core";
+@import "./module/locomotive/easing";
+@import "./module/locomotive/animations";
+@import "./module/partner_hotel";

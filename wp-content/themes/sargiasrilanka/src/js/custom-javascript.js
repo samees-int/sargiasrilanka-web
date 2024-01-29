@@ -118,14 +118,28 @@ jQuery(document).ready(function ($) {
     if ($(window).width() <= 767) {
       $(".sargia_discover--slider").slick("slickRemove", 0);
     }
-
-    $(".tour-frature-slider").slick({
-      speed: 800,
-      dots: true,
-      fade: true,
-      arrows: false,
-      cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-      appendDots: $(".tour-frature-slider__dots--list"),
-    });
+    // $(".slider").slick({
+    //   adaptiveHeight :false,
+    // });
+    $(".tour-frature-slider")
+      .slick({
+        speed: 800,
+        dots: true,
+        fade: true,
+        adaptiveHeight: false,
+        arrows: false,
+        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+        appendDots: $(".tour-frature-slider__dots--list"),
+        rows: 0,
+      })
+      .on("setPosition", function (event, slick) {
+        slick.$slides.css("height", slick.$slideTrack.height() + "px");
+      });
+  });
+  // debugger;
+  AOS.init({
+    offset: 400,
+    duration: 1000,
+    easing: "ease-in-out-back",
   });
 });

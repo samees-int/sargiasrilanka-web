@@ -12,10 +12,13 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('sargiasrilanka_container_type');
 $class = "";
-if (is_front_page()) {
+if (is_front_page() || is_page_template('page-templates/destinations.php') || is_page('about-us')) {
 	$class = "fixed-top navbar-dark";
 } else {
 	$class = " navbar-light bg-black";
+}
+if (is_page_template('page-templates/fullwidthpage-white.php')) {
+	$class = " navbar-white";
 }
 ?>
 

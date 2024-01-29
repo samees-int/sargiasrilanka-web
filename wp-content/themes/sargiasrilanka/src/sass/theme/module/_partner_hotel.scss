@@ -1,0 +1,36 @@
+.hotel_patner {
+  .nav-tabs {
+    .nav-link {
+      &.active {
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+  .hotel_partiner__item {
+    margin-bottom: 10px;
+  }
+  .tab-content {
+    padding: 15px;
+  }
+  .hotel_patner__logo-wrapper {
+    text-align: center;
+    gap: 2%;
+    .hotel_patner__item {
+      flex: 1;
+      min-width: calc(
+        20%
+      ); /* Adjust the width and gap to create equal-width columns */
+      box-sizing: border-box;
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin: 8px;
+      @media (max-width: 768px) {
+        min-width: 45%; /* Adjust the width and gap for smaller screens */
+      }
+      @media (max-width: 480px) {
+        min-width: 100%;
+      }
+    }
+  }
+}

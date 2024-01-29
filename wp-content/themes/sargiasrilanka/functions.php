@@ -31,6 +31,7 @@ $sargiasrilanka_includes = array(
 	'/ajax-filter/tour-ajax-filter.php',
 	'/footer-logo.php', 					// upload logo
 	'/social-media-link.php', 					// upload logo
+	'/partner-hotel.php', 					// upload logo
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
@@ -168,3 +169,11 @@ add_action('save_post', 'member_save_meta_box_data');
 
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+
+
+function locomotive_enqueue_script()
+{
+	wp_enqueue_script('locomotive', 'https://unpkg.com/aos@next/dist/aos.js', false);
+}
+
+add_action('wp_enqueue_scripts', 'locomotive_enqueue_script');
