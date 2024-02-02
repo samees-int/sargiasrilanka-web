@@ -20,6 +20,7 @@ jQuery(document).ready(function ($) {
         if (currentScrollTop > 100) {
           // Scrolling down, hide the header
           mainNav.addClass("-translate-y-full");
+          mainNav.removeClass('bg-home-gradient')
           // customLogo.hide();
           // secondaryLogo.show();
         }
@@ -35,7 +36,7 @@ jQuery(document).ready(function ($) {
         // Check if we're at the top of the page
         if (currentScrollTop === 0) {
           mainNav.removeClass("bg-white shadow navbar-light");
-          mainNav.addClass("navbar-dark");
+          mainNav.addClass("navbar-dark bg-home-gradient");
           navLink.removeClass("has-bg-white");
           navLink.parent().removeClass("primary-underline");
           secondaryLogo.hide();
@@ -114,6 +115,40 @@ jQuery(document).ready(function ($) {
       ],
     });
 
+    $(".sargia-way__slick-slide").slick({slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: false,
+            dots: false,
+            centerMode: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+            dots: false,
+            centerMode: false,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+            dots: false,
+            centerMode: false,
+          },
+        },
+      ]
+      });
     // Remove the first slide on mobile screens
     if ($(window).width() <= 767) {
       $(".sargia_discover--slider").slick("slickRemove", 0);

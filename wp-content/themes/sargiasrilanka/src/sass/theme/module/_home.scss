@@ -80,6 +80,7 @@
     align-items: flex-end;
     background-position: center;
     padding-bottom: 80px;
+    background-color: $green;
     // margin-top: -140px;
     // margin-bottom: 40px;
     position: relative;
@@ -114,6 +115,21 @@
         rgba(254, 254, 254, 0) 0%,
         rgba(255, 255, 255, 1) 100%
       );
+    }
+    &::before {
+      top: 0;
+      content: "";
+      position: absolute;
+      height: 240px;
+      background: $green;
+      background: linear-gradient(
+        180deg,
+        $green 0%,
+        rgb(255 255 255 / 0%) 100%
+      );
+
+      z-index: 0;
+      width: 100%;
     }
     .container {
       z-index: 1;
@@ -164,7 +180,7 @@
     }
     .why-sargia__sub-sec--title {
       font-size: 22px;
-      color: $primary--80;
+      color: $primary--40;
       font-weight: 400;
       margin-bottom: 15px;
       font-family: $font-family-secondary;
@@ -172,7 +188,7 @@
     .why-sargia__sub-sec--content {
       font-family: $font-family-base;
       font-size: 18px;
-      color: $primary--80;
+      color: $green;
       font-weight: 400;
     }
     .why-sargia__sub-sec--readmore {
@@ -268,7 +284,7 @@
 }
 
 .sargia_discover {
-  margin-top: 40px;
+  margin-top: 80px;
   .slick-list {
     @include media-breakpoint-up(xl) {
       padding: 0 20% 0 0 !important;
@@ -584,14 +600,17 @@
     color: $primary--60;
   }
   .travel-type__card {
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
     .travel-type__card--image {
       background-repeat: no-repeat;
       text-align: center;
       background-position: center;
-      font-size: 45px;
+      font-size: 38px;
       color: $white;
       position: relative;
-      background-size: contain;
+      background-size: cover;
       font-family: $font-family-secondary;
       @include media-breakpoint-up(md) {
         font-size: 30px;
@@ -601,12 +620,26 @@
         font-size: 45px;
       }
       @include media-breakpoint-up(xl) {
-        background-size: contain;
+        background-size: cover;
       }
       &::after {
         content: "";
-        padding-top: 135%;
+        padding-top: 150%;
         display: block;
+        background: rgb(0 0 0 / 53%);
+        @include media-breakpoint-up(sm) {
+          padding-top: 135%;
+        }
+        @include media-breakpoint-up(md) {
+          background: rgb(0 0 0 / 33%);
+          padding-top: 150%;
+        }
+        @include media-breakpoint-up(lg) {
+          padding-top: 200%;
+        }
+        @include media-breakpoint-up(xl) {
+          padding-top: 150%;
+        }
       }
     }
     .travel-type__card--title {
@@ -617,13 +650,23 @@
       padding: 0 10px;
     }
     .travel-type__card--body {
+      position: absolute;
       max-width: 370px;
-      color: $primary;
-      margin: 0 auto;
+      color: $white;
+      left: 0;
+      right: 0;
+      margin: 0 30px;
       text-align: center;
       font-family: $font-family-base;
       font-size: 16px;
       font-weight: 300;
+      bottom: 30px;
+      @include media-breakpoint-up(sm) {
+        margin: 0 auto;
+      }
+      @include media-breakpoint-up(md) {
+        margin: 0 30px;
+      }
       .travel-type__card--content,
       .travel-type__card--action {
         margin-top: 40px;
@@ -637,13 +680,25 @@
   }
   .travel-type__card__mt {
     margin-top: 50px;
-    @include media-breakpoint-up(md) {
-      margin-top: -30px;
+    &:nth-child(odd) {
+      // margin-top: 50px;
+      // @include media-breakpoint-up(md) {
+      //   margin-top: -30px;
+      // }
     }
-    &.travel-type__card__bt {
-      margin-top: 50px;
-    }
+
+    // &.travel-type__card__bt {
+    //   margin-top: 50px;
+    // }
   }
+  // .sargia-way__slick-slide{
+  //   .slick-slide:nth-child(2n+1){
+  //     color:red;
+  //     .travel-type__card__mt{
+  //       margin-top: 50px;
+  //     }
+  //   }
+  // }
 }
 
 .talk-to-us {
@@ -692,6 +747,13 @@
       font-size: 22px;
       width: 200px;
       height: 200px;
+    }
+
+    &--content {
+      a {
+        color: $primary--60;
+        text-decoration: none;
+      }
     }
   }
 }

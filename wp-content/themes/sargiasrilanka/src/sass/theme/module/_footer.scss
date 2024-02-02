@@ -9,8 +9,8 @@
 }
 
 .site-footer {
-  padding: 70px 0 60px;
-  background-color: $black;
+  padding: 70px 0 0px;
+  background-color: $green;
   font-size: 16px;
   font-weight: 400;
   .site-footer__info,
@@ -94,6 +94,23 @@
         text-decoration: none;
         font-size: 18px;
         font-weight: 400;
+      }
+    }
+  }
+}
+.copyright{
+  background-color: #262626;
+    padding: 20px 0;
+    margin-top: 15px;
+  .copyright-info{
+    color: #ababab;
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+    a{
+      color: #ababab;
+      &:hover{
+        color: $white;
       }
     }
   }

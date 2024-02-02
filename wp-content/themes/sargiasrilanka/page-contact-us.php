@@ -25,8 +25,7 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 	<div class="destination-heading">
 		<div class="destination-bg-image text-center" style="background-image:url(<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>)">
 			<div class="section__title">
-				<span class="destination-heading--suburb">Destination</span>
-
+				
 				<?php
 				the_title(
 					sprintf('<h2 class="h1">', ''),
