@@ -171,6 +171,8 @@ class Tour_management
 		$this->loader->add_action('init', $plugin_admin, 'register_tour_attribute_taxonomy');
 		$this->loader->add_action('init', $plugin_admin, 'register_tour_interests_taxonomy');
 		$this->loader->add_action('save_post', $plugin_admin, 'save_tour_highlight_metabox');
+		$this->loader->add_action('save_post', $plugin_admin, 'save_tour_pkgIncludes_metabox'); // save  tour_pkg Includes 
+		$this->loader->add_action('save_post', $plugin_admin, 'save_tour_pkgExcludes_metabox'); // save  tour_pkg Includes 
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_wp_editor_assets');
 	}
 

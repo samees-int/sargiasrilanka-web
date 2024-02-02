@@ -20,6 +20,7 @@
  * @subpackage Tour_management/admin
  * @author     samees sandaruwan <samees@interlective.com>
  */
+
 class Tour_management_Admin
 {
 
@@ -167,6 +168,25 @@ class Tour_management_Admin
 			'tour_highlight_metabox',
 			'Tour Highlight',
 			array($this, 'render_tour_highlight_metabox'),
+			'sargia_tour',  // Post type where the metabox should be displayed
+			'normal', // Position of the metabox (e.g., normal, side, advanced)
+			'default'    // Priority of the metabox
+		);
+
+		//Tour Package Includes metabox
+		add_meta_box(
+			'tour_pkgIncludes_metabox',
+			'Package Includes',
+			array($this, 'render_tour_pkgIncludes_metabox'),
+			'sargia_tour',  // Post type where the metabox should be displayed
+			'normal', // Position of the metabox (e.g., normal, side, advanced)
+			'default'    // Priority of the metabox
+		);
+		//Tour Package Excludes metabox
+		add_meta_box(
+			'tour_pkgExcludes_metabox',
+			'Package Excludes',
+			array($this, 'render_tour_pkgExcludes_metabox'),
 			'sargia_tour',  // Post type where the metabox should be displayed
 			'normal', // Position of the metabox (e.g., normal, side, advanced)
 			'default'    // Priority of the metabox
@@ -361,6 +381,39 @@ class Tour_management_Admin
 		echo '</div>';
 	}
 
+	function render_tour_pkgIncludes_metabox($post)
+	{
+		$content = get_post_meta($post->ID, '_tour_pkgIncludes_content', true);
+		wp_editor($content, 'tour_pkgIncludes_editor', array(
+			'textarea_name' => '_tour_pkgIncludes_content',
+			'editor_height' => 200,
+			'textarea_rows' => 20
+		));
+	}
+
+	function save_tour_pkgIncludes_metabox($post_id)
+	{
+		if (array_key_exists('_tour_pkgIncludes_content', $_POST)) {
+			update_post_meta($post_id, '_tour_pkgIncludes_content', $_POST['_tour_pkgIncludes_content']);
+		}
+	}
+	function render_tour_pkgExcludes_metabox($post)
+	{
+		$content = get_post_meta($post->ID, '_tour_pkgExcludes_content', true);
+		wp_editor($content, 'tour_pkgExcludes_editor', array(
+			'textarea_name' => '_tour_pkgExcludes_content',
+			'editor_height' => 200,
+			'textarea_rows' => 20
+		));
+	}
+
+	function save_tour_pkgExcludes_metabox($post_id)
+	{
+		if (array_key_exists('_tour_pkgExcludes_content', $_POST)) {
+			update_post_meta($post_id, '_tour_pkgExcludes_content', $_POST['_tour_pkgExcludes_content']);
+		}
+	}
+
 	function render_tour_highlight_metabox($post)
 	{
 		$content = get_post_meta($post->ID, '_tour_highlight_content', true);
@@ -370,8 +423,6 @@ class Tour_management_Admin
 			'textarea_rows' => 20
 		));
 	}
-
-
 
 	function save_tour_highlight_metabox($post_id)
 	{
