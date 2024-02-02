@@ -29,39 +29,39 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 		<div class="<?php echo $container; ?>">
 			<div class="roW">
 				<div class="col-12">
-					<nav style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Library</li>
+					<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+						<ol class="breadcrumb mb-4">
+							<li class="breadcrumb-item  text-light"><a class="text-white" href="<?php echo home_url(); ?>">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page"><?php echo get_the_title(); ?></li>
 						</ol>
 					</nav>
 				</div>
 			</div>
 			<div class="row">
-				<?php if (!empty($tour_info_meta['total_days']) || !empty($tour_info_meta['total_disatance'])) { ?>
+				<?php
+				$tour_days = !empty($tour_info_meta['total_days']) ? $tour_info_meta['total_days'] . ' Days' : '';
+				$tour_distance = !empty($tour_info_meta['total_disatance']) ? $tour_info_meta['total_disatance'] . ' km' : '';
+
+				if (!empty($tour_days) || !empty($tour_distance)) {
+
+				?>
 					<div class="col-md-4 border-end">
 
-						<p class="tour_meta_total_days">
-							<?php
-							if (!empty($tour_info_meta['total_days'])) {
-								echo $tour_info_meta['total_days'] . ' Days';
-							}
-							?>
-						</p>
-						<p class="tour_meta_total_disatance">
-							<?php
-							if (!empty($tour_info_meta['total_disatance'])) {
-								echo  $tour_info_meta['total_disatance'] . ' km';
-							}
-							?>
-						</p>
+						<?php
+						if (!empty($tour_days)) {
+							echo '<p class="tour_meta_total_days">' . esc_html($tour_days) . '</p>';
+						}
+						if (!empty($tour_distance)) {
+							echo '<p class="tour_meta_total_disatance">' . esc_html($tour_distance) . '</p>';
+						}
+						?>
 
 					</div>
 				<?php  } ?>
 				<div class="col-md-4">
 					<?php
 					$tour_highlight_value = get_post_meta(get_the_ID(), '_tour_highlight_content', true);
-					if (isset($tour_highlight_value)) {
+					if (!empty($tour_highlight_value)) {
 						echo $tour_highlight_value;
 					}
 					?>
@@ -71,26 +71,49 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 					$tour_map_image_id = $tour_info_meta['map_image_id'];
 					$tour_map_image_url = !empty($tour_map_image_id) ? (wp_get_attachment_image_url($tour_map_image_id, 'medium')) : '';
 					// $tour_highlight_value = get_post_meta(get_the_ID(), '_tour_highlight_content', true);
+					if (!empty($tour_map_image_id)) {
 					?>
-					<img src=<?php echo $tour_map_image_url; ?> />
+						<img src=<?php echo esc_url($tour_map_image_url); ?> />
+					<?php } ?>
 				</div>
 			</div>
 		</div>
-		<div class="<?php echo $container; ?> mt-5">
+		<div class="<?php echo $container; ?>">
 			<div class="row">
 
-				<div class="col-md-6">
-					<?php
-					the_content();
-					sargiasrilanka_link_pages();
-					?>
-
+				<div class="col-md-12">
+					<div class="tour-content mt-3">
+						<?php
+						the_content();
+						sargiasrilanka_link_pages();
+						?>
+					</div>
 				</div>
+
+				<div class="col-md-6 mt-2">
+					<?php
+					$tour_pkgIncludes_value = get_post_meta(get_the_ID(), '_tour_pkgIncludes_content', true);
+					if (!empty($tour_pkgIncludes_value)) {
+						echo "<h4 class='pkgIncludes__title'>Package Includes</h4>";
+						echo "<div class='pkgIncludes--content'>" . $tour_pkgIncludes_value . "</div>";
+					}
+					?>
+				</div>
+				<div class="col-md-6 mt-2">
+					<?php
+					$tour_pkgExcludes_value = get_post_meta(get_the_ID(), '_tour_pkgExcludes_content', true);
+					if (!empty($tour_pkgExcludes_value)) {
+						echo "<h4 class='pkgExcludes__title'>Package Excludes</h4>";
+						echo "<div class='pkgIncludes--content'>" . $tour_pkgExcludes_value . "</div>";
+					}
+					?>
+				</div>
+
 			</div>
 		</div>
 	</div>
 	<?php if (isset($tour_info_meta['repeater'])) { ?>
-		<div class="tour-itineraries">
+		<div class="tour-itineraries mb-4">
 			<?php foreach ($tour_info_meta['repeater'] as $index => $tour_itineraries_item) {
 				// var_dump($tour_itineraries_item);
 			?>

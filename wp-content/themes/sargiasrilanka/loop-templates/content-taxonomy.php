@@ -58,15 +58,14 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 						$map_image_id = $tour_info_meta['map_image_id'];
 						// Retrieve the image URL using the custom image ID
 						$image_url = wp_get_attachment_url($map_image_id);
+						if (!empty($image_url)) {
 					?>
-						<div class="featured-comparison__map" aria-hidden="true">
+							<div class="featured-comparison__map" aria-hidden="true">
 
-							<img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
-						</div>
-					<?php }
-
-
-
+								<img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
+							</div>
+						<?php }
+					}
 
 					if (!empty($tour_info_meta)) :
 
@@ -75,7 +74,7 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 							'hide_empty' => false,
 						));
 
-					?>
+						?>
 						<div class="d-none d-md-block w-100">
 							<p class="featured-comparison__tags">
 								<?php
@@ -101,10 +100,10 @@ $tour_info_meta = get_post_meta($post->ID, 'tour_days', true);
 						<div class="featured-comparison__meta">
 							<p class="featured-comparison__meta__length">
 								<?php
-								if (isset($tour_info_meta['total_days'])) {
+								if (!empty($tour_info_meta['total_days'])) {
 									echo $tour_info_meta['total_days'] . ' Days <span class="divider--grey">—</span>';
 								}
-								if (isset($tour_info_meta['total_disatance'])) {
+								if (!empty($tour_info_meta['total_disatance'])) {
 									echo '<span class="featured-comparison__meta__length--lower-case">' . $tour_info_meta['total_disatance'] . ' km</span>';
 								}
 

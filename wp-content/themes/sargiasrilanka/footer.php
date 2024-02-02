@@ -126,26 +126,49 @@ $container = get_theme_mod('sargiasrilanka_container_type');
 			</div>
 			<div class="col-md-5 col-lg-4">
 				<div class="site-footer__contact-info">
-					<div class="site-footer__contct--mobile ">
-						<div class="site-footer__title">
-							CALL US
+					<?php
+					// Get Address
+					$address = get_theme_mod('site_address');
+
+					// Get Email
+					$email = get_theme_mod('site_email');
+
+					// Get Phone Number
+					$phone = get_theme_mod('site_phone');
+					if (!empty($phone)) {
+					?>
+						<div class="site-footer__contct--mobile ">
+							<div class="site-footer__title">
+								CALL US
+							</div>
+							<div class="site-footer__tel">
+								<a href="tel:<?php echo  esc_html($phone); ?>"><?php echo  esc_html($phone); ?></a>
+							</div>
 						</div>
-						<div class="site-footer__tel">
-							<a href="tel:+94 (0) 773 717 933">+94 (0) 773 717 933</a>
+					<?php }
+					// Check if Email is not empty
+					if (!empty($email)) {
+					?>
+						<div class="site-footer__contct--email">
+							<div class="site-footer__title">
+								EMAIL US
+							</div>
+							<div class="site-footer__email">
+								<a href="mailto:<?php echo esc_html($email); ?>"><?php echo esc_html($email); ?></a>
+							</div>
 						</div>
-					</div>
-					<div class="site-footer__contct--email">
-						<div class="site-footer__title">
-							EMAIL US
-						</div>
-						<div class="site-footer__email">
-							<a href="mailto:operations@sargiasrilanka.com">operations@sargiasrilanka.com</a>
-						</div>
-					</div>
+					<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>
 
+	</div>
+	<div class="copyright">
+		<div class="copyright-info">
+			Copyright © <?php echo date('Y'); ?> Developed By <a href="https://interlective.com/" target="_blank">Interlective</a>
+		</div>
 	</div>
 </section>
 

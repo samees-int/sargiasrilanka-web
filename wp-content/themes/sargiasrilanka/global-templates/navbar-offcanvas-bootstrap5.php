@@ -12,8 +12,8 @@ defined('ABSPATH') || exit;
 
 $container = get_theme_mod('sargiasrilanka_container_type');
 $class = "";
-if (is_front_page() || is_page_template('page-templates/destinations.php') || is_page('about-us')) {
-	$class = "fixed-top navbar-dark";
+if (is_front_page() || is_page_template('page-templates/destinations.php') ) {
+	$class = "fixed-top navbar-dark bg-home-gradient";
 } else {
 	$class = " navbar-light bg-black";
 }

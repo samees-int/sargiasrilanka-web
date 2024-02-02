@@ -177,3 +177,45 @@ function locomotive_enqueue_script()
 }
 
 add_action('wp_enqueue_scripts', 'locomotive_enqueue_script');
+
+
+function customize_site_identity_fields($wp_customize) {
+    // Add Address field
+    $wp_customize->add_setting('site_address', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('site_address', array(
+        'label'    => __('Address', 'your-theme-domain'),
+        'section'  => 'title_tagline',
+        'priority' => 60,
+		'type'     => 'textarea', 
+    ));
+
+    // Add Email field
+    $wp_customize->add_setting('site_email', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+
+    $wp_customize->add_control('site_email', array(
+        'label'    => __('Email', 'your-theme-domain'),
+        'section'  => 'title_tagline',
+        'priority' => 70,
+    ));
+
+    // Add Phone Number field
+    $wp_customize->add_setting('site_phone', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('site_phone', array(
+        'label'    => __('Phone Number', 'your-theme-domain'),
+        'section'  => 'title_tagline',
+        'priority' => 80,
+    ));
+}
+
+add_action('customize_register', 'customize_site_identity_fields');
